@@ -1,0 +1,68 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+<style>
+    .inner-content input{
+        margin-bottom: 20px;
+    }
+    #news-title{
+        margin-bottom: 20px;
+    }
+    #member-update{
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        padding-top: 10px;
+        font-size: 17px;
+        float: right;
+    }
+    .inner-content{
+        overflow: hidden;
+    }
+    .inner-content img{
+        height: 150px;
+        margin-bottom: 20px;
+    }
+</style>
+
+{% if member %}
+
+<div class="container">
+   <div class="inner-content">
+   <form enctype="multipart/form-data" action="{% url 'myadmin:team_change' member.pk  %}" method="post" novalidate>
+  <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
+    {% csrf_token %}
+        <input type='hidden'  name='id' id="id" value='{{ member.pk }}' />
+        <img id="img" name="photo" src="{{ member.photo_url }}">
+        <input type="file" name="photo" id="photo">
+        <label for="#title">Имя</label>
+        <input type="text" class="form-control" name="name" id="name" value="{{ member.name }}">
+        <label for="descrip">Описание</label>
+        <textarea name="descrip" rows="10" cols="40" id="descrip"> {% autoescape off %}  {{ member.descrip }} {% endautoescape %}</textarea>
+      <button id="member-update" type="submit" class="btn btn-default"> Изменить </button>
+    </form>
+    </div>
+</div>
+
+  {% else  %}
+{% endif %}
+
+  <script>
+  tinymce.init({
+    selector: 'textarea',
+    height: 300,
+    menubar: true,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table contextmenu paste code'
+    ],
+    toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+    content_css: [
+      ]
+  });
+
+  </script>
+
+  {% endblock %}

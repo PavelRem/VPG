@@ -1,0 +1,64 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+<style>
+    #photo{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #news-title{
+        margin-bottom: 20px;
+    }
+    #add-news{
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        padding-top: 10px;
+        font-size: 17px;
+        float: right;
+    }
+    .inner-content{
+        overflow: hidden;
+    }
+</style>
+<div class="container">
+   <div class="inner-content">
+   <form enctype="multipart/form-data" action="{% url 'myadmin:news_add' %}" method="post" novalidate>
+       <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
+        {% csrf_token %}
+        <input type="file" id="photo" name="photo" multiple />
+        <label for="#title">Заголовок</label>
+        <input type="text" class="form-control" name="title" id="news-title" value="">
+        <label for="#activity">Деятельность</label>
+        <input type="checkbox"  name="activity" id="news-title" >
+        <label for="#monitor">Мониторинг</label>
+        <input type="checkbox" name="monitor" id="news-title" >
+        <label for="#activity">Слайдер</label>
+        <input type="checkbox" name="slider" id="news-title"><br>
+        <label for="#text">Текст</label>
+      <textarea name="text" rows="10" cols="40" id="text"></textarea>
+      <button id="add-news" type="submit" class="btn btn-default"> Добавить </button>
+    </form>
+    </div>
+</div>
+
+
+  <script>
+  tinymce.init({
+    selector: 'textarea',
+    height: 300,
+    menubar: true,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table contextmenu paste code'
+    ],
+    toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+    content_css: [
+      ]
+  });
+  </script>
+
+  {% endblock %}

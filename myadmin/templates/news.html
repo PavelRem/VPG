@@ -1,0 +1,125 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+<style>
+    #add-news{
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        padding-top: 12px;
+        font-size: 17px;
+    }
+    h3{
+        padding-bottom: 5px;
+        border-bottom: 1px solid red;
+        margin-bottom: 20px;
+    }
+    .table-hover tbody tr:hover td {
+        background-color: #eaeaea;
+    }
+    table input{
+        height: 20px;
+        width: 20px;
+    }
+</style>
+<div class="container">
+   {% csrf_token %}
+   <div class="inner-content">
+    <a id = "add-news" href="{% url 'myadmin:news_add' %}" type="submit" class="btn btn-default">Добавить Новость</a>
+    <h3>Список новостей</h3>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Картинка</th>
+            <th>Дата</th>
+            <th>Заголовок</th>
+            <th>Деятельность</th>
+            <th>Мониторинг</th>
+            <th>Слайдер</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+           {% for each in news %}
+            {# Each "contact" is a Contact model object. #}
+            <tr>
+                <td><img src="{{ each.img_url }}" alt="" width = "80px" height="50px"></td>
+                <td>{{ each.pub_date | date:"d/m/Y" }}</td>
+                <td>{{ each.title }}</td>
+                <td><input class="filters" name="activ" id="{{ each.pk }}" type="checkbox" {% if each.activity %} checked {% endif %}></td>
+                <td><input class="filters" name="monitor" id="{{ each.pk }}" type="checkbox" {% if each.monitoring %} checked {% endif %}></td>
+                <td><input class="filters" name="slider" id="{{ each.pk }}" type="checkbox" {% if each.slider  %} checked {% endif %}></td>
+                <td><a href="{% url 'myadmin:news_update' each.pk  %}" type="submit" class="btn btn-default">Изменить</a></td>
+                <td><a type="submit" class="btn btn-default" data-toggle="modal" data-target="#Confirm{{ each.pk }}">Удалить</a></td>
+            </tr>
+
+
+
+            <div id="Confirm{{ each.pk }}" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <h3>Вы уверены?</h3>
+                  </div>
+                  <div class="modal-footer">
+                    <a href="{% url 'myadmin:news_delete' each.pk  %}" type="submit" class="btn btn-default" >Да</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            {% endfor %}
+        </tbody>
+      </table>
+
+      <nav class ="p-nav"aria-label="Page navigation">
+        <div class="pagination">
+          <span class="step-links">
+          {% if news.has_previous %}
+            <a href="?page={{ news.previous_page_number }}"><button><<</button></a>
+          {% else %}
+            <button><<</button>
+          {% endif %}
+          <span class="current">
+           {{ news.number }} из {{ news.paginator.num_pages }}
+          </span>
+          {% if news.has_next %}
+            <a href="?page={{ news.next_page_number }}"><button>>></button></a>
+            {% else %}
+              <button>>></button>
+          {% endif %}
+    </nav>
+</div>
+
+<script>
+$(document).on('click', '.filters', function (e){
+  var main_this = this;
+  console.log('filters/'+main_this.name);
+  $.ajax({url: '../filters/'+main_this.name,
+          type: "POST",
+          data: {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            id: this.id,
+          },
+          success: function (data) {
+              console.log("siucccess");
+              main_this.checked = main_this.checked ? false : true;
+          },
+          error: function (data){
+            console.log(data)
+          }
+        })
+
+        return false;
+      }
+
+
+  )
+
+</script>
+{% endblock %}

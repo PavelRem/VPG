@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+ <style>
+     .inner-content{
+        overflow: hidden;
+    }
+     .inner-content input{
+         margin-bottom: 20xp;
+     }
+    #add-ref{
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        padding-top: 10px;
+        font-size: 17px;
+        float: right;
+    }
+</style>
+  <div class="container">
+   <div class="inner-content">
+
+    <form enctype="multipart/form-data" action="{% url 'myadmin:reference_add_save'%}" method="post" novalidate>
+       <input type='hidden' name='csrfmiddlewaretoken' value='' />
+        {% csrf_token %}
+        <label for="#title">Заголовок</label>
+        <input type="text" class="form-control" name="title" id="ref-title" value="">
+        <label for="#link">Ссылка</label>
+        <input type="text" class="form-control" name="link" id="link" value="">
+        <label for="#source">Источник</label>
+        <input type="text" class="form-control" name="source" id="source" value="">
+      <button id="add-ref" type="submit" class="btn btn-default"> Добавить </button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+ <style>
+     .inner-content{
+        overflow: hidden;
+    }
+     .inner-content input{
+         margin-bottom: 20xp;
+     }
+    #update-ref{
+        margin-top: 20px;
+        width: 200px;
+        height: 50px;
+        padding-top: 10px;
+        font-size: 17px;
+        float: right;
+    }
+</style>
+  <div class="container">
+   <div class="inner-content">
+
+    <form enctype="multipart/form-data" action="{% url 'myadmin:reference_update_save' ref.pk %}" method="post" novalidate>
+       <input type='hidden' name='csrfmiddlewaretoken' value='' />
+        {% csrf_token %}
+        <label for="#title">Заголовок</label>
+        <input type="text" class="form-control" name="title" id="ref-title" value="{{ ref.title }}">
+        <label for="#link">Ссылка</label>
+        <input type="text" class="form-control" name="link" id="link" value="{{ ref.link }}">
+        <label for="#source">Источник</label>
+        <input type="text" class="form-control" name="source" id="source" value="{{ ref.source }}">
+      <button id="update-ref" type="submit" class="btn btn-default"> Изменить </button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,206 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ВПГ</title>
+    <link rel="icon" href="{% static '/images/favicon.ico' %}"/>
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+  </head>
+  <body>
+  	<div class="container main">
+		<div class="header">
+			<div class="headline">
+                <div class="col-md-4 phone">
+                    <div class="x"></div>
+                    Телефон: <a href="#">+38-096-868-85-02</a>
+                </div>
+                <div class="col-md-4 mail">
+                    <div class="x"></div>
+                    Email: <a href="#">East.hr.group@gmail.com</a>
+                </div>
+                <div class="col-md-4 fb">
+                    <a href="#">Адвокат рабочих</a>
+                    <div class="x"></div>
+                </div>
+  		    </div>
+  			<div class="face">
+  				<div class="row">
+				 	<div class="col-md-8">
+					<div class="logo">
+						<a href="index.html"><img id = "logo" src="../images/logo.png"></a>
+						<div class = "logo-text">
+							<h4>Общественная правозащитная организация</h4>
+							<h2>Восточная правозащитная группа</h2>
+						</div>
+					</div>
+				 </div>
+				 	<div class="col-md-4 search">
+					<p><strong>Защита прав человека<br> в восточной Украине</strong></p>
+					<form class="navbar-form navbar-left" role="search">
+					  <div class="form-group">
+						<input id = "search-inp" type="text" class="form-control" placeholder="Поиск">
+					  </div>
+					  <button id = "s-btn" type="submit" class="btn btn-default">Найти</button>
+					</form>
+				 </div>
+        		</div>
+         	</div>
+         	<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="AboutUs.html">О нас<span class="sr-only">(current)</span>
+					</a></li>
+					<li><a href="OurGroup.html">Наша команда</a></li>
+					<li><a href="Activity.html">Деятельность</a></li>
+					<li><a href="Monitoring.html">Мониторинг</a></li>
+					<li><a href="MediaAboutUs.html">СМИ про нас</a></li>
+					<li><a href="Partners.html">Партнеры</a></li>
+					<li><a href="Contacts.html">Контакты</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+			<div id="Slider" class="carousel slide Slider" data-ride="carousel" data-pause="hover">
+				<ol class="carousel-indicators">
+					<li data-target="#Slider" data-slide-to="0" class="active"></li>
+					<li data-target="#Slider" data-slide-to="1"></li>
+					<li data-target="#Slider" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+				   <div class="item active">
+					 <a href="#">
+						<img src="">
+						 <div class="carousel-caption">
+							<h1></h1>
+							<p></p>
+						 </div>
+					 </a>
+					</div>
+					<div class="item">
+					 <a href="#">
+						<img src="">
+						 <div class="carousel-caption">
+							<h1></h1>
+							<p></p>
+						 </div>
+					 </a>
+					</div>
+				   <div class="item">
+					 <a href="#">
+						<img src="">
+						 <div class="carousel-caption">
+							<h1></h1>
+							<p></p>
+						 </div>
+					 </a>
+					</div>
+				</div>
+				<a href="#Slider" class = "left carousel-control" data-slide = "prev">
+				<span class ="glyphicon glyphicon-chevron-left"></span></a>
+				<a href="#Slider" class = "right carousel-control" data-slide = "next">
+				<span class ="glyphicon glyphicon-chevron-right"></span></a>
+        	</div>
+		</div>
+		<div class="col-md-8 content">
+		    <div class="galery">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="news">
+							<img src="" alt="">
+							<div class="news-text">
+							<h3></h3>
+							<p></p>
+							</div>
+							<i id = "date"></i>
+							<a id = "Reed-more" href="#"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="col-md-4 sidebar">
+				<div class="donate sidebox">
+					<h4><strong>Поддержите нашу деятельность</strong></h4>
+					<a id = "donate" type="button" class="btn btn-default" href ="Donate.html">
+					    <img src="../images/heart.png" alt="">Поддержать
+					</a>
+				</div>
+				<div class="report sidebox">
+                    <form action="#" class ="report-form">
+                        <h4><strong>Сообщить о нарушении прав (анонимно)</strong></h4>
+                        <div class="form-group">
+                            <input type="name" class="form-control" id="InputName" placeholder="Укажите Имя">
+                            <small id="NamelHelp" class="form-text text-muted"></small>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Укажите Email">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
+                        <div class="form-group">
+                          <textarea class="form-control textarea" rows="6" id="comment" placeholder="Введите сообщение"></textarea>
+                          <small id="textHelp" class="form-text text-muted"></small>
+                        </div>
+                        <button id = "report-sub" type="submit" type="button" class="btn btn-default">Отправить</button>
+                    </form>
+				</div>
+
+
+				<!-- <div class="face-feed"><iframe id="fb-frame"name="f1fb7462da1bc7" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.5/plugins/page.php?adapt_container_width=false&amp;app_id=1411420252434746&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FXBwzv5Yrm_1.js%3Fversion%3D42%23cb%3Df2311e44db7c6f4%26domain%3D15minut.org%26origin%3Dhttps%253A%252F%252F15minut.org%252Ffb3d6f4289a2a%26relation%3Dparent.parent&amp;container_width=375&amp;height=500&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Feast.hr.group%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline&amp;width=375" style="border: none; visibility: visible; width: 375px; height: 500px;" class=""></iframe>
+				</div> -->
+			</div>
+       	<div class="partners">
+				<h3><strong>Наши партнеры</strong></h3>
+				<a href="#"><img src="" alt=""></a>
+				<a href="#"><img src="" alt=""></a>
+				<a href="#"><img src="" alt=""></a>
+				<a href="#"><img src="" alt=""></a>
+				<a href="#"><img src="" alt=""></a>
+    		</div>
+       	<div class="footer">
+       	    <p>
+                Основным приоритетом организации является всесторонняя  защита прав человека на востоке украины во время военного конфликта.
+            </p>
+            <div class="cont">
+                <div class="phone">
+                    <div class="x"></div>
+                    Телефон: <a href="#">+38-096-868-85-02</a>
+                </div>
+                <div class="mail">
+                    <div class="x"></div>
+                    Email: <a href="#">East.hr.group@gmail.com</a>
+                </div>
+            </div>
+       	</div>
+       	<!-- <iframe src="https://sendmoney.privatbank.ua/ru/" frameborder="0" width ="100%" height="1000px"></iframe> -->
+    </div>
+  	<div id="report-modal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+				<h4 class="modal-title">Сообщение отправлено</h4>
+				</div>
+				<div class="modal-body">С вами свяжутся в ближайшее время.</div>
+				<div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
+			</div>
+		</div>
+	 </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html
