@@ -117,10 +117,10 @@
 		<div class="col-md-8 content">
 		    <div class="galery">
 				<div class="row">
-					<div class="col-md-4">
-      {% if news %}
-            {% for each in news %}
 
+    {% if news %}
+         {% for each in news %}
+			  <div class="col-md-4">
 						<div class="news">
 							<img src="" alt="">
 							<div class="news-text">
@@ -130,12 +130,11 @@
 							<i id = "date">{{ each.pub_date | date:"d/m/Y" }}</i>
 							<a id = "Reed-more" href="#"></a>
 						</div>
-					</div>
+        </div>
 
             {% endfor %}
       {% endif %}
 
-				</div>
 			</div>
 		</div>
         <div class="col-md-4 sidebar">
