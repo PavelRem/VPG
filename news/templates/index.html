@@ -125,7 +125,7 @@
 							<img src="" alt="">
 							<div class="news-text">
 							<h3>{{ each.title }}</h3>
-							<p>{% autoescape off %} {{ each.text }} {{% endautoescape %}</p>
+							<p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
 							</div>
 							<i id = "date">{{ each.pub_date | date:"d/m/Y" }}</i>
 							<a id = "Reed-more" href="#"></a>
