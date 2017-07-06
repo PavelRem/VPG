@@ -118,16 +118,23 @@
 		    <div class="galery">
 				<div class="row">
 					<div class="col-md-4">
+      {% if news %}
+            {% for each in news %}
+
 						<div class="news">
 							<img src="" alt="">
 							<div class="news-text">
-							<h3></h3>
-							<p></p>
+							<h3>{{ each.title }}</h3>
+							<p>{% autoescape off %}{{ each.text }} {{% endautoescape %}</p>
 							</div>
-							<i id = "date"></i>
+							<i id = "date">{{ each.pub_date | date:"d/m/Y" }}</i>
 							<a id = "Reed-more" href="#"></a>
 						</div>
 					</div>
+
+            {% endfor %}
+      {% endif %}
+
 				</div>
 			</div>
 		</div>
