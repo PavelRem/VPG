@@ -17,7 +17,7 @@ def index(request):
 
     for x in data['slides']:
         x.text = x.text[:230] + ' ...'
-        
+
     return render(request, 'index.html',  data)
 
 def team(request):
@@ -42,7 +42,7 @@ def news(request):
     return render(request, 'index.html',  {'news': NewsData.objects.order_by("pub_date")[:3].all()})
 
 def fullread(request, id):
-    return render(request, 'News.html',  {'news': NewsData.objects.get(id=id).text})
+    return render(request, 'News.html',  {'news': NewsData.objects.get(id=id)})
 
 def login(request):
     return render(request, 'login.html',  {})
