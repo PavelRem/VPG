@@ -1,4 +1,7 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
 
+{% block body %}
             <div class="inner-content">
         		<h3 id = "title">Новость</h3>
         		<img id= "news-m-img"src="" alt="">
@@ -6,3 +9,4 @@
         			<p>{{ news_detail.title }}</p>
         		</div>
         	</div>
+{% endblock %}
