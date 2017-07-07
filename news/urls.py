@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     #url(r'^admin/news$', views.admin_news, name='admin_news'),
     #url(r'^admin/aboutus$', views.aboutus, name='aboutus'),
-    url(r'^fullread/(?P<id>[0-9]+)/$', views.fullread, name='fullread'),
+    url(r'^news/fullread/(?P<id>[0-9]+)/$', views.fullread, name='fullread'),
 ]
