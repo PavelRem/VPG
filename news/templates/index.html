@@ -122,7 +122,7 @@
          {% for each in news %}
 			  <div class="col-md-4">
 						<div class="news">
-							<img src="" alt="">
+							<img src="{{ each.img_url }}" alt="{{ each.title }} ">
 							<div class="news-text">
 							<h4>{{ each.title }}</h4>
 							<p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
