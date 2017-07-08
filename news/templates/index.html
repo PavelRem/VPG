@@ -83,7 +83,7 @@
           {% if slides %}
 
            {% for slide in slides %}
-            <div class="item {% if forloop.counter == 0  %} active {% endif %}">
+            <div class="item {% if forloop.counter == 1  %} active {% endif %}">
              <a href="{% url 'mynews:fullread' slide.pk %}">
               <img src="{{ slide.img_url }} ">
                <div class="carousel-caption">
