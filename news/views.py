@@ -41,7 +41,7 @@ def news(request):
     return render(request, 'index.html',  {'news': NewsData.objects.order_by("pub_date")[:3].all()})
 
 def fullread(request, id_news):
-    return render(request, 'News.html',  {'news_detail': NewsData.objects.get(id=id_news)})
+    return render(request, 'News.html',  {'news_detail': NewsData.objects.get(pk=id_news)})
 
 def login(request):
     return render(request, 'login.html',  {})
