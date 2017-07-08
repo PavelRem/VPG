@@ -94,11 +94,11 @@ body a:hover{
 .navbar-nav > li > a{
     padding-top:10px !important;
     padding-bottom:0 !important;
-    height: 40px;
+    height: 50px;
 	transition:all 0.3s ease;
 }
 .navbar {
-	min-height:40px !important;
+	min-height:50px !important;
 	font-size: 18px;
 	margin-bottom: 0px;
 }
@@ -108,7 +108,7 @@ body a:hover{
 }
 .navbar{
 	border-radius: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .navbar-nav li {
 	margin-left: 10px;
