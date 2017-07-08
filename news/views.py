@@ -3,6 +3,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django import forms
 from django.contrib.auth import authenticate
+import django.contrib.postgres
+from django.contrib.postgres.search import SearchVector
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
 from .models import NewsData, Aboutus, Reference, Team
 
