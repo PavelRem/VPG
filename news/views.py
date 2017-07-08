@@ -8,17 +8,7 @@ from .models import NewsData, Aboutus, Reference, Team
 
 def index(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
-    data = {
-        'news': NewsData.objects.order_by("-pub_date")[:3].all(),
-        'slides': NewsData.objects.filter(slider=True).order_by("-pub_date")[:3].all()
-    }
-    for x in data['news']:
-        x.text = x.text[:230] + ' ...'
-
-    for x in data['slides']:
-        x.text = x.text[:230] + ' ...'
-
-    return render(request, 'index.html',  data)
+    return redirect('news')
 
 def team(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
@@ -38,7 +28,17 @@ def reference(request):
     return render(request, 'media_about.html', {'references': references })
 
 def news(request):
-    return render(request, 'index.html',  {'news': NewsData.objects.order_by("pub_date")[:3].all()})
+    data = {
+        'news': NewsData.objects.order_by("-pub_date")[:3].all(),
+        'slides': NewsData.objects.filter(slider=True).order_by("-pub_date")[:3].all()
+    }
+    for x in data['news']:
+        x.text = x.text[:230] + ' ...'
+
+    for x in data['slides']:
+        x.text = x.text[:230] + ' ...'
+
+    return render(request, 'index.html',  data)
 
 def fullread(request, id_news):
     return render(request, 'News.html',  {'news_detail': NewsData.objects.get(pk=id_news)})
