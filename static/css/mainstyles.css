@@ -89,6 +89,12 @@ body h1, body h2, body h3, body h4, body h5{
 	display: inline-block;
     text-shadow: 0px 0px 6px #999;
 }
+.logo-text h2{
+    font-family: 'Squada One', cursive;
+}
+.logo-text h4{
+    font-size: 20px;
+}
 .search{
 	width:280px;
 	display: inline-block;
