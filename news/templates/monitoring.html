@@ -3,11 +3,11 @@
 
 {% block body %}
 
-    {% if monitoring_news %}
-
-			{% for news in monitoring_news %}
 			<div class="galery">
 				<div class="row">
+				{% if monitoring_news %}
+
+			{% for news in monitoring_news %}
 						<div class="col-md-4">
 							 <div class="news">
 								 <img src="{{ news.img_url }}" alt="{{ news.title }}">
@@ -19,11 +19,11 @@
 								 <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
 							 </div>
 						</div>
+					{% endfor %}
+
+    			{% endif %}
 					</div>
 				</div>
-			 {% endfor %}
-
-    {% endif %}
 
 {% endblock %}
 
