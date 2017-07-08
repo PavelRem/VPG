@@ -3,10 +3,10 @@
 
 {% block body %}
             <div class="inner-content">
-        		<h3 id = "title">Новость</h3>
-        		<img id= "news-m-img"src="" alt="">
+        		<h3 id = "title">{{ news_detail.title }}</h3>
+        		<img id= "news-m-img"src="{{ img_url.text }}" alt="">
         		<div class="text" id ="text">
-        			<p>{{ news_detail.text }}</p>
+        			<p> {% autoescape off %} {{ news_detail.text }} {% endautoescape %}</p>
         		</div>
         	</div>
 {% endblock %}
