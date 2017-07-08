@@ -88,7 +88,7 @@ def login(request):
 
 def search(request):
     keywords = request.POST.get("search_input", "")
-    news_list = NewsData.objects.annotate(rank=SearchRank(SearchVector('text'), keywords)).filter(rank__gte=0.04).order_by('-rank')
+    news_list = NewsData.objects.annotate(rank=SearchRank(SearchVector('text'), keywords)).filter(rank__gte=0.07).order_by('-rank')
     paginator = Paginator(news_list, 6) # Show 25 contacts per page
     page = request.GET.get('page')
     try:
@@ -102,4 +102,4 @@ def search(request):
     for n in news:
         n.text = n.text[:130] + ' ...'
 
-    return render(request, 'searchnews.html', {'news': news })
+    return render(request, 'searchnews.html', {'searchnews': news })
