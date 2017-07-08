@@ -7,18 +7,20 @@
 
     {% if references %}
 
-			{% for reference in references %}
+		<h1 id = "title">Сми о нас</h1>
+				<div class="text">
 
-						<h1 id = "title">Сми о нас</h1>
-								<div class="text">
-										<div class="media">
-												<i id = "date">{{ reference.pub_date | date:"d.m.Y" }}<</i>
-												<a href="{{ reference.link }}"  target="_blank"><p>{{ reference.title }}<</p></a>
-												<a href="{{ reference.link }}"  target="_blank"><small>{{ reference.source }}</small></a>
-									</div>
-						</div>
+			   {% for reference in references %}
+
+							<div class="media">
+									<i id = "date">{{ reference.pub_date | date:"d.m.Y" }}<</i>
+										<a href="{{ reference.link }}"  target="_blank"><p>{{ reference.title }}<</p></a>
+										<a href="{{ reference.link }}"  target="_blank"><small>{{ reference.source }}</small></a>
+							</div>
 
 			 {% endfor %}
+
+			 	</div>
 
     {% endif %}
 
