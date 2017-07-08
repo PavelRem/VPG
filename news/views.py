@@ -33,10 +33,11 @@ def news(request):
         'slides': NewsData.objects.filter(slider=True).order_by("-pub_date")[:3].all()
     }
     for x in data['news']:
-        x.text = x.text[:230] + ' ...'
+        x.text = x.text[:130] + ' ...'
+
 
     for x in data['slides']:
-        x.text = x.text[:230] + ' ...'
+        x.text = x.text[:130] + ' ...'
 
     return render(request, 'index.html',  data)
 

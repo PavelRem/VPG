@@ -84,8 +84,8 @@
 					 <a href="#">
 						<img src="">
 						 <div class="carousel-caption">
-							<h1></h1>
-							<p></p>
+							<h1>sdfs </h1>
+							<p>1111111111111111111</p>
 						 </div>
 					 </a>
 					</div>
@@ -121,10 +121,10 @@
     {% if news %}
          {% for each in news %}
 			  <div class="col-md-4">
-						<div class="news" style="height: 100%;">
+						<div class="news">
 							<img src="" alt="">
 							<div class="news-text">
-							<h5>{{ each.title }}</h5>
+							<h4>{{ each.title }}</h4>
 							<p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
 							</div>
 							<i id = "date">{{ each.pub_date | date:"d.m.Y" }}</i>
