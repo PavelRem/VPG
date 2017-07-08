@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+    {% if aboutus %}
+
+       <div class="inner-content">
+		      <h1 id = "title">О нас</h1>
+		      <div class="text">
+		     		<p>{% autoescape off %} {{ aboutus.text }} {% endautoescape %}</p>
+		   		</div>
+	   	</div>
+
+    {% endif %}
+
+{% endblock %}

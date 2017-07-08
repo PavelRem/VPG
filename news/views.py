@@ -13,6 +13,9 @@ def index(request):
 def team(request):
     return render(request, 'team.html',  {'team': Team.objects.all()})
 
+def aboutus(request):
+    return render(request, 'aboutus.html',  {'aboutus': Aboutus.objects.all()})
+
 def reference(request):
     reference_list = Reference.objects.all()
     paginator = Paginator(reference_list, 3) # Show 25 contacts per page

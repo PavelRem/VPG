@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^login/$', views.login, name='login'),
     url(r'^/$', views.news, name='news'),
     url(r'^/team/$', views.team, name='team'),
+    url(r'^/aboutus/$', views.aboutus, name='aboutus'),
     url(r'^/activity/$', views.activity, name='activity'),
     url(r'^/monitoring/$', views.monitoring, name='monitoring'),
     url(r'^reference/$', views.reference, name='reference'),
