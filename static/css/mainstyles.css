@@ -135,7 +135,7 @@ body a:hover{
 #Slider, .carousel-inner, .item img, .carousel-control{
     border-radius: 20px;
 }
-.headline, .navbar{
+.headline, .navbar, .news{
     border-radius: 5px;
 }
 .item img{
