@@ -103,4 +103,4 @@ def search(request):
     for n in news:
         n.text = n.text[:130] + ' ...'
 
-    return render(request, 'searchnews.html', {'searchnews': news })
+    return render(request, 'searchnews.html', {'searchnews': news, 'keywords': keywords })

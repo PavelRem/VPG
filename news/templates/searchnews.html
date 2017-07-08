@@ -7,7 +7,7 @@
 
     <div class="galery">
     <div class="row">
-      
+
 			{% for news in searchnews %}
 
 						<div class="col-md-4">
@@ -28,7 +28,7 @@
   </div>
 
     {% else %}
-      <p>Ничего не найдено по Вашому запросу.</p>
+      <p> {{ keywords }} Ничего не найдено по Вашому запросу.</p>
     {% endif %}
 
 {% endblock %}
