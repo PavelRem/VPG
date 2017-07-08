@@ -41,7 +41,7 @@ def news(request):
     return render(request, 'index.html',  data)
 
 def activity(request):
-    news_list = Reference.objects.filter(activity=True).all()
+    news_list = NewsData.objects.filter(activity=True).all()
     paginator = Paginator(news_list, 6) # Show 25 contacts per page
     page = request.GET.get('page')
     try:
