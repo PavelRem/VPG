@@ -80,40 +80,33 @@
 					<li data-target="#Slider" data-slide-to="2"></li>
 				</ol>
 				<div class="carousel-inner">
-				   <div class="item">
-					 <a href="#">
-						<img src="">
-						 <div class="carousel-caption">
-							<h1>sdfs </h1>
-							<p>1111111111111111111</p>
-						 </div>
-					 </a>
-					</div>
-					<div class="item">
-					 <a href="#">
-						<img src="">
-						 <div class="carousel-caption">
-							<h1></h1>
-							<p></p>
-						 </div>
-					 </a>
-					</div>
-				   <div class="item">
-					 <a href="#">
-						<img src="">
-						 <div class="carousel-caption">
-							<h1></h1>
-							<p></p>
-						 </div>
-					 </a>
-					</div>
+          {% if slides %}
+
+            <div class="item {% if forloop.counter >= 0  %} active {% endif %}">
+             <a href="{% url 'mynews:fullread' slide.pk %}">
+              <img src="{{ slide.img_url }} ">
+               <div class="carousel-caption">
+                <h1> {{ slide.title }} </h1>
+                <p>{% autoescape off %} {{ slide.text }} {% endautoescape %}</p>
+               </div>
+             </a>
+            </div>
+
+              {% endfor %}
+
+          {% endif %}
 				</div>
+
+    {% if slides %}
 				<a href="#Slider" class = "left carousel-control" data-slide = "prev">
 				<span class ="glyphicon glyphicon-chevron-left"></span></a>
 				<a href="#Slider" class = "right carousel-control" data-slide = "next">
 				<span class ="glyphicon glyphicon-chevron-right"></span></a>
-        	</div>
-		</div>
+
+    {% endif %}
+    
+    </div>
+	</div>
 		<div class="col-md-8 content">
 		    <div class="galery">
 				<div class="row">
