@@ -57,6 +57,23 @@ def activity(request):
 
     return render(request, 'activity.html', {'activity_news': news })
 
+def monitoring(request):
+    news_list = NewsData.objects.filter(monitoring=True).all()
+    paginator = Paginator(news_list, 6) # Show 25 contacts per page
+    page = request.GET.get('page')
+    try:
+        news = paginator.page(page)
+    except PageNotAnInteger:
+        news = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        news = paginator.page(paginator.num_pages)
+
+    for n in news:
+        n.text = n.text[:130] + ' ...'
+
+    return render(request, 'monitoring.html', {'monitoring_news': news })
+
 def fullread(request, id_news):
     return render(request, 'News.html',  {'news_detail': NewsData.objects.get(pk=id_news)})
 

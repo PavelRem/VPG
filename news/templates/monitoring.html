@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+    {% if monitoring_news %}
+
+			{% for news in monitoring_news %}
+
+						<div class="col-md-4">
+							 <div class="news">
+								 <img src="" alt="">
+								 <div class="news-text">
+								 <h4>{{ news.title }}</h4>
+								 <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
+								 </div>
+								 <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
+								 <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
+							 </div>
+						</div>
+
+			 {% endfor %}
+
+    {% endif %}
+
+{% endblock %}
+
+{% block paginate %}
+
+		<nav class ="p-nav" aria-label="Page navigation">
+			<div class="pagination">
+				<span class="step-links">
+				{% if monitoring_news.has_previous %}
+					<a href="?page={{ monitoring_news.previous_page_number }}"><button><<</button></a>
+				{% else %}
+					<button><<</button>
+				{% endif %}
+				<span class="current">
+				 {{ monitoring_news.number }} из {{ monitoring_news.paginator.num_pages }}
+				</span>
+				{% if monitoring_news.has_next %}
+					<a href="?page={{ monitoring_news.next_page_number }}"><button>>></button></a>
+					{% else %}
+						<button>>></button>
+				{% endif %}
+				</span>
+			</div>
+		</nav>
+
+{% endblock %}
