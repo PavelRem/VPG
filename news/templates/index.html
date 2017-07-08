@@ -46,9 +46,9 @@
 					<form enctype="multipart/form-data" class="navbar-form navbar-left" action="{% url 'mynews:search' %}" type="POST" role="search">
             <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
              {% csrf_token %}
-					  <div class="form-group">
+
 						   <input id = "search-inp" type="text" name="searchinput" class="form-control" placeholder="Поиск">
-					  </div>
+
 					  <button id = "s-btn" type="submit" class="btn btn-default">Найти</button>
 					</form>
           <!-- End of search form  -->
