@@ -87,7 +87,7 @@ def login(request):
     return render(request, 'login.html',  {})
 
 def search(request):
-    keywords = request.POST.get("search_input", "")
+    keywords = request.POST["search_input"]
     news_list = NewsData.objects.annotate(rank=SearchRank(SearchVector('text'), keywords)).filter(rank__gte=0.3).order_by('-rank')
     paginator = Paginator(news_list, 6) # Show 25 contacts per page
     page = request.GET.get('page')

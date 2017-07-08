@@ -44,7 +44,6 @@
 
           <!-- Search form  -->
 					<form class="navbar-form navbar-left" action="{% url 'mynews:search' %}" type="post">
-            <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
              {% csrf_token %}
 					  <div class="form-group">
 						   <input id = "search-inp" type="text" name="search_input" class="form-control" placeholder="Поиск">
