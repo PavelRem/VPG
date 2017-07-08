@@ -365,6 +365,10 @@ body a:hover{
 	height: 200px;
 	padding: 10px;
 }
+.news-text h4{
+    color: red;
+    font-size: 15px;
+}
 #date{
 	float: left;
 	margin: 10px 10px;
