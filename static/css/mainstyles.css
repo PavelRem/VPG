@@ -92,7 +92,7 @@ body a:hover{
 }
 /*------------------------------*/
 .navbar-nav > li > a{
-    padding-top:10px !important;
+    padding-top:15px !important;
     padding-bottom:0 !important;
     height: 50px;
 	transition:all 0.3s ease;
