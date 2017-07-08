@@ -120,8 +120,39 @@
     </div>
 	</div>
 		<div class="col-md-8 content">
+           <div class="galery">
+            <div class="row">
+            {% if news %}
+             {% for each in news %}
+              <div class="col-md-4">
+                <div class="news">
+                  <img src="{{ each.img_url }}" alt="{{ each.title }}">
+                  <div class="news-text">
+                  <h4 id = "news-text-title">{{ each.title }}</h4>
+                  <p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
+                  </div>
+                  <i id = "date">{{ each.pub_date | date:"d.m.Y" }}</i>
+                  <a id = "Reed-more" href="#">{% url 'mynews:fullread' each.pk %}</a>
+                </div>
+              </div>
+                {% endfor %}
 
-    {% if news %}
+            {% else %}
+
+            {% block body %}
+            {% endblock %}
+
+          {% endif %}
+
+          {% block paginate %}
+          {% endblock %} -->
+            </div>
+          </div>
+
+
+
+
+   <!--  {% if news %}
          {% for each in news %}
 			  <div class="col-md-4">
 						<div class="news">
@@ -145,8 +176,7 @@
       {% endif %}
 
       {% block paginate %}
-      {% endblock %}
-      </div>
+      {% endblock %} -->
   </div>
         <div class="col-md-4 sidebar">
 				<div class="donate sidebox">
