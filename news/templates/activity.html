@@ -5,9 +5,6 @@
 
     {% if activity_news %}
 
-			  <div class="galery">
-					 <div class="row">
-
 						{% for news in activity_news %}
 
 							 <div class="col-md-4">
@@ -22,11 +19,7 @@
 		 						</div>
 		 					</div>
 
-						{% if forloop.counter == 3 %} 	</div> <div>{% endif %}
-
 						{% endfor %}
-
-        	</div>
 
 				<nav class ="p-nav"aria-label="Page navigation">
 					<div class="pagination">
@@ -46,8 +39,6 @@
 						{% endif %}
 					</div>
 				</nav>
-
-	    </div>
 
     {% endif %}
 
