@@ -8,7 +8,7 @@ from .models import NewsData, Aboutus, Reference, Team
 
 def index(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
-    return redirect('news')
+    return redirect('mynews/news')
 
 def teammembers(request):
     return render(request, 'teammembers.html',  {'team': Team.objects.all()})
