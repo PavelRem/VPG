@@ -10,8 +10,8 @@ def index(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
     return redirect('news')
 
-def team(request):
-    return render(request, 'team.html',  {'team': Team.objects.all()})
+def teammembers(request):
+    return render(request, 'teammembers.html',  {'team': Team.objects.all()})
 
 def aboutus(request):
     return render(request, 'aboutus.html',  {'aboutus': Aboutus.objects.all()[0]})
