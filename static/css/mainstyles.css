@@ -393,8 +393,8 @@ body h1, body h2, body h3, body h4, body h5{
 }
 #news-text-title{
     margin-top: 0px;
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 500;
     border-bottom: 1px solid red;
     padding-bottom: 5px;
 }
