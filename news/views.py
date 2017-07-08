@@ -82,3 +82,21 @@ def fullread(request, id_news):
 
 def login(request):
     return render(request, 'login.html',  {})
+
+def search(request):
+    keywords = request.POST.get("search_input", "")
+    news_list = NewsData.objects.annotate(rank=SearchRank(SearchVector('text'), keywords)).filter(rank__gte=0.04).order_by('-rank')
+    paginator = Paginator(news_list, 6) # Show 25 contacts per page
+    page = request.GET.get('page')
+    try:
+        news = paginator.page(page)
+    except PageNotAnInteger:
+        news = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        news = paginator.page(paginator.num_pages)
+
+    for n in news:
+        n.text = n.text[:130] + ' ...'
+
+    return render(request, 'searchnews.html', {'news': news })
