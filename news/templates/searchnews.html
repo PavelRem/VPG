@@ -5,6 +5,9 @@
 
     {% if searchnews %}
 
+    <div class="galery">
+    <div class="row">
+      
 			{% for news in searchnews %}
 
 						<div class="col-md-4">
@@ -20,6 +23,9 @@
 						</div>
 
 			 {% endfor %}
+
+     </div>
+  </div>
 
     {% else %}
       <p>Ничего не найдено по Вашому запросу.</p>
