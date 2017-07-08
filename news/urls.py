@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from . import views
 
-app_name = 'news'
+app_name = 'mynews'
 
 urlpatterns = [
     url(r'^login/$', views.login, name='login'),
