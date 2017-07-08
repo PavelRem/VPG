@@ -90,7 +90,7 @@ def login(request):
 def search(request):
     keywords = request.POST.get("search_input", "")
     news_list = NewsData.objects.all()
-    news_list = news_list.annotate(similarity=TrigramSimilarity('text', keywords),).filter(similarity__gt=0.5)
+    news_list = news_list.annotate(similarity=TrigramSimilarity('text', keywords),).filter(similarity__gt=0.1)
     news_list = news_list.order_by('-similarity')
 
     paginator = Paginator(news_list, 6) # Show 25 contacts per page
