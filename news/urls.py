@@ -6,7 +6,7 @@ app_name = "mynews"
 
 urlpatterns = [
     url(r'^login/$', views.login, name='login'),
-    url(r'^/', views.news, name='news'),
+    url(r'^news/', views.news, name='news'),
     url(r'^teammembers/$', views.teammembers, name='teammembers'),
     url(r'^aboutus/$', views.aboutus, name='aboutus'),
     url(r'^activity/$', views.activity, name='activity'),

@@ -63,7 +63,7 @@
 				  <ul class="nav navbar-nav">
 					<li {% if aboutus %} class="active" {% endif %}><a href="{% url 'mynews:aboutus' %}">О нас<span class="sr-only">(current)</span>
 					</a></li>
-					<li><a href="{% url 'mynews:team' %}">Наша команда</a></li>
+					<li><a href="{% url 'mynews:teammembers' %}">Наша команда</a></li>
 					<li {% if activity_news %} class="active" {% endif %}><a href="{% url 'mynews:activity' %}">Деятельность</a></li>
 					<li {% if monitoring_news %} class="active" {% endif %}><a href="{% url 'mynews:monitoring' %}">Мониторинг</a></li>
 					<li><a href="MediaAboutUs.html">СМИ про нас</a></li>
@@ -102,7 +102,7 @@
             {% endfor %}
 
           {% endif %}
-				</div>
+				</div>teammembers
 
     {% if slides %}
 				<a href="#Slider" class = "left carousel-control" data-slide = "prev">
