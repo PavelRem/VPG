@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django import forms
 from django.contrib.auth import authenticate
-from django.contrib.postgres.search import TrigramSimilarity
 import django.contrib.postgres
 from django.contrib.postgres.search import SearchVector
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
@@ -88,8 +87,8 @@ def login(request):
     return render(request, 'login.html',  {})
 
 def search(request):
-    keywords = request.POST.get("searchinput", "")
-    news_list = NewsData.objects.annotate(search=SearchVector('text', 'title'),).filter(search=keywords)
+    keywords = request.POST.get("search_input", "")
+    news_list = NewsData.objects.annotate(rank=SearchRank(SearchVector('text'), keywords)).filter(rank__gte=0.3).order_by('-rank')
     paginator = Paginator(news_list, 6) # Show 25 contacts per page
     page = request.GET.get('page')
     try:
@@ -103,4 +102,4 @@ def search(request):
     for n in news:
         n.text = n.text[:130] + ' ...'
 
-    return render(request, 'searchnews.html', {'searchnews': news, 'keywords': keywords })
+    return render(request, 'searchnews.html', {'searchnews': news, "keywords": keywords })
