@@ -21,7 +21,7 @@ def aboutus(request):
 
 def reference(request):
     reference_list = Reference.objects.all()
-    paginator = Paginator(reference_list, 3) # Show 25 contacts per page
+    paginator = Paginator(reference_list, 10) # Show 25 contacts per page
     page = request.GET.get('page')
     try:
         references = paginator.page(page)

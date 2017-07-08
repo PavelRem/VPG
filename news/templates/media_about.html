@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+<div class="inner-content">
+
+    {% if references %}
+
+			{% for reference in references %}
+
+						<h1 id = "title">Сми о нас</h1>
+								<div class="text">
+										<div class="media">
+												<i id = "date">{{ reference.pub_date | date:"d.m.Y" }}<</i>
+												<a href="{{ reference.link }}"><p>{{ reference.title }}<</p></a>
+												<a href="{{ reference.link }}"><small>{{ reference.source }}</small></a>
+									</div>
+						</div>
+
+			 {% endfor %}
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
+
+{% block paginate %}
+
+		<nav class ="p-nav" aria-label="Page navigation">
+			<div class="pagination">
+				<span class="step-links">
+				{% if references.has_previous %}
+					<a href="?page={{ references.previous_page_number }}"><button><<</button></a>
+				{% else %}
+					<button><<</button>
+				{% endif %}
+				<span class="current">
+				 {{ references.number }} из {{ references.paginator.num_pages }}
+				</span>
+				{% if references.has_next %}
+					<a href="?page={{ references.next_page_number }}"><button>>></button></a>
+					{% else %}
+						<button>>></button>
+				{% endif %}
+				</span>
+			</div>
+		</nav>
+
+{% endblock %}
