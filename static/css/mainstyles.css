@@ -77,8 +77,7 @@ body a:hover{
 .logo-text{
 	margin: 35px 20px;
 	display: inline-block;
-    color: #999;
-    text-shadow: 0px 0px 6px #fff;
+    color: #cccccc;
 }
 .search{
 	width:280px;
