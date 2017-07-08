@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{% static '/css/mainstyles.css' %}">
   </head>
   <body>
+  	<div class="container main">
 		<div class="header">
 			<div class="headline">
-               <div class="container main">
                 <div class="col-md-4 phone">
                     <div class="x"></div>
                     Телефон: <a href="#">+38-096-868-85-02</a>
@@ -26,10 +26,8 @@
                     <a href="#">Адвокат рабочих</a>
                     <div class="x"></div>
                 </div>
-                </div>
   		    </div>
   			<div class="face">
-  			<div class="container main">
   				<div class="row">
 				 	<div class="col-md-8">
 					<div class="logo">
@@ -55,11 +53,8 @@
 
 				 </div>
          	</div>
-                </div>
           </div>
-          
          	<nav class="navbar navbar-inverse">
-         	<div class="container main">
 			  <div class="container-fluid">
 				<div class="navbar-header">
 				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -82,9 +77,9 @@
 				  </ul>
 				</div>
 			  </div>
-                </div>
 			</nav>
 			<div id="Slider" class="carousel slide Slider" data-ride="carousel" data-pause="hover">
+
      {% if slides %}
 
 				<ol class="carousel-indicators">
@@ -121,6 +116,7 @@
 				<span class ="glyphicon glyphicon-chevron-right"></span></a>
 
     {% endif %}
+
     </div>
 	   </div>
 		  <div class="col-md-9 content">
@@ -154,7 +150,6 @@
             {% block paginate %}
             {% endblock %}
         </div>
-        <div class="container main">
         <div class="col-md-3 sidebar">
 				<div class="donate sidebox">
 					<h4><strong>Поддержите нашу деятельность</strong></h4>
