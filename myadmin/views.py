@@ -159,7 +159,7 @@ def about(request):
         return render(request, 'about.html',  {'info': ''})
 
 def change_aboutus(request):
-    if objects.all().count():
+    if Aboutus.objects.all().count():
         obj = Aboutus.objects.all()[:1].get()
     else:
         obj = Aboutus.objects.create()
