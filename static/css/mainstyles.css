@@ -104,6 +104,7 @@ body a:hover{
 	min-height:50px !important;
 	font-size: 18px;
 	margin-bottom: 0px;
+    border-radius: 0px;
 }
 .navbar-nav {
 	float: none;
