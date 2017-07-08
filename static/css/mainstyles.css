@@ -98,7 +98,7 @@ body a:hover{
     padding-top:15px !important;
     padding-bottom:0 !important;
     height: 50px;
-	transition:all 0.3s ease;
+	transition:all 0.1s ease;
 }
 .navbar {
 	min-height:50px !important;
