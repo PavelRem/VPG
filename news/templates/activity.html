@@ -38,7 +38,7 @@
 				<span class="current">
 				 {{ activity_news.number }} из {{ activity_news.paginator.num_pages }}
 				</span>
-				{% if news.has_next %}
+				{% if activity_news.has_next %}
 					<a href="?page={{ activity_news.next_page_number }}"><button>>></button></a>
 					{% else %}
 						<button>>></button>
