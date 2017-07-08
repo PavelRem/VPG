@@ -4,7 +4,7 @@
 {% block body %}
             <div class="inner-content">
         		<h3 id = "title">{{ news_detail.title }}</h3>
-        		<img id= "news-m-img"src="{{ img_url.text }}" alt="">
+        		<img id= "news-m-img"src="{{ news_detail.img_url }}" alt="">
         		<div class="text" id ="text">
         			<p> {% autoescape off %} {{ news_detail.text }} {% endautoescape %}</p>
         		</div>
