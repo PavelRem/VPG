@@ -66,7 +66,7 @@ body a:hover{
 }
 /*------------------------------*/
 .face{
-    
+    background-image: url(../images/header.jpg);
 }
 #logo{
 	height: 150px;
