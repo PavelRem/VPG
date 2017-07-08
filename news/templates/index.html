@@ -133,6 +133,13 @@
         </div>
 
             {% endfor %}
+
+        {% else %}
+
+        {% block body %}
+        {% endblock %}
+
+
       {% endif %}
 
 			</div>
