@@ -363,11 +363,15 @@ body a:hover{
 }
 .news-text{
 	height: 200px;
-	padding: 10px;
+	padding: 5px;
+}
+.news-text p{
+    font-size: 15px;
 }
 .news-text h4{
+    margin-top: 0px;
     color: red;
-    font-size: 15px;
+    font-size: 17px;
 }
 #date{
 	float: left;
