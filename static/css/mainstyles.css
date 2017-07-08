@@ -132,16 +132,17 @@ body a:hover{
 	border-bottom: 3px solid red;
 }
 /*------------------------------*/
-#Slider{
+#Slider, .carousel-inner, .item img, .carousel-control{
+    border-radius: 20px;
+}
+.headline, .navbar{
     border-radius: 10px;
 }
 .item img{
 	width: 100%;
     height: 600px !important;
-    border-radius: 10px;
 }
 .carousel-inner{
-    border-radius: 10px;
     height: 600px;
 }
 .carousel-indicators{
