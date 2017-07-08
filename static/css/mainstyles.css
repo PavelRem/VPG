@@ -65,6 +65,9 @@ body a:hover{
 	margin-right: 10px;
 }
 /*------------------------------*/
+.face{
+    background-color: red;
+}
 #logo{
 	height: 150px;
 	float: left;
@@ -127,7 +130,7 @@ body a:hover{
 .navbar-inverse .navbar-nav  a:hover {
     color: red;
 	text-shadow: 0px 0px 6px red;
-	border-bottom: 3px solid red;
+	border-bottom: 5px solid red;
 }
 /*------------------------------*/
 .item img{
