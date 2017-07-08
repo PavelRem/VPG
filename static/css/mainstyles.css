@@ -107,9 +107,8 @@ body a:hover{
 	text-align: center;
 }
 .navbar{
-	border-radius: 0px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	border-radius: 5px;
+    margin-bottom: 10px;
 }
 .navbar-nav li {
 	margin-left: 10px;
