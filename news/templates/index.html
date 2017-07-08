@@ -43,7 +43,7 @@
 					<p><strong>Защита прав человека<br> в восточной Украине</strong></p>
 
           <!-- Search form  -->
-					<form class="navbar-form navbar-left" action="{% url 'mynews:search' %}" type="post">
+					<form class="navbar-form navbar-left" action="{% url 'mynews:search' %}" method="POST">
              {% csrf_token %}
 					  <div class="form-group">
 						   <input id = "search-inp" type="text" name="search_input" class="form-control" placeholder="Поиск">
