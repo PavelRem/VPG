@@ -53,7 +53,7 @@ def activity(request):
         news = paginator.page(paginator.num_pages)
 
     for n in news:
-        n.text = x.text[:130] + ' ...'
+        n.text = n.text[:130] + ' ...'
 
     return render(request, 'activity.html', {'activity_news': news })
 
