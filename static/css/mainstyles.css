@@ -393,11 +393,10 @@ body h1, body h2, body h3, body h4, body h5{
 }
 #news-text-title{
     margin-top: 0px;
-    font-size: 18px;
-    font-style: bold;
+    font-size: 22px;
+    font-weight: 600;
     border-bottom: 1px solid red;
     padding-bottom: 5px;
-    font: bold; 
 }
 #date{
 	float: left;
