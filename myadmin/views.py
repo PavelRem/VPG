@@ -160,6 +160,8 @@ def about(request):
 
 def change_aboutus(request):
     obj = Aboutus.objects.get(pk=1)
+    if not obj:
+        obj = Aboutus.objects.create()
     obj.text = request.POST['text']
     obj.save()
     return redirect('/admin/about')
