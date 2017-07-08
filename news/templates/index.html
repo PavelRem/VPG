@@ -82,6 +82,7 @@
 				<div class="carousel-inner">
           {% if slides %}
 
+           {% for slide in slides %}
             <div class="item {% if forloop.counter >= 0  %} active {% endif %}">
              <a href="{% url 'mynews:fullread' slide.pk %}">
               <img src="{{ slide.img_url }} ">
@@ -92,7 +93,7 @@
              </a>
             </div>
 
-              {% endfor %}
+            {% endfor %}
 
           {% endif %}
 				</div>
@@ -104,7 +105,7 @@
 				<span class ="glyphicon glyphicon-chevron-right"></span></a>
 
     {% endif %}
-    
+
     </div>
 	</div>
 		<div class="col-md-8 content">
