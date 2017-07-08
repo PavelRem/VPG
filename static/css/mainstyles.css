@@ -92,7 +92,7 @@ body a:hover{
 }
 /*------------------------------*/
 .navbar-nav > li > a{
-    padding-top:10px !important; 
+    padding-top:10px !important;
     padding-bottom:0 !important;
     height: 40px;
 	transition:all 0.3s ease;
@@ -212,7 +212,7 @@ body a:hover{
 }
 @-webkit-keyframes pulsate {
   50% {
-	  color: red; 
+	  color: red;
 	  text-shadow: 0px 0px 1px red;
 	  border-color: red;
 	  box-shadow: 0px 0px 2px 1px rgba(255,77,77,0.5);
@@ -220,7 +220,7 @@ body a:hover{
 }
 @keyframes pulsate {
   50% {
-	  color: red; 
+	  color: red;
 	  text-shadow: 0px 0px 1px red;
 	  border-color: red;
 	  box-shadow: 0px 0px 2px 1px rgba(255,77,77,0.5);
@@ -280,7 +280,7 @@ body a:hover{
 }
 #fb-frame{
     width: 100%;
-    height: 500px;    
+    height: 500px;
 }
 /*------------------------------*/
 .partners{
@@ -362,7 +362,7 @@ body a:hover{
 	margin-top: 0px;
 }
 .news-text{
-	height: 200px;
+	max-height: 400px;
 	padding: 10px;
 }
 #date{
@@ -436,7 +436,7 @@ body a:hover{
 	float: right;
 }
 #news-m-img{
-	width: 100%;    
+	width: 100%;
 	margin-bottom: 10px;
 }
 /*------------------------------*/
@@ -578,7 +578,7 @@ body a:hover{
         font-size: 13px;
     }
     #fb-frame{
-        
+
     }
 }
 @media screen and (max-width: 991px){
@@ -764,7 +764,7 @@ body a:hover{
         width: 60%;
     }
     .news img{
-        width: 
+        width:
     }
     .item img{
         height: 260px !important;
