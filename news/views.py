@@ -46,3 +46,4 @@ def fullread(request, id_news):
 
 def login(request):
     return render(request, 'login.html',  {})
+    

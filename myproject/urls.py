@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^news/', include('news.urls')),
+    url(r'^news', include('news.urls')),
     url(r'^admin', include('myadmin.urls')),
     #url(r'^admin/', admin.site.urls),
 ]
