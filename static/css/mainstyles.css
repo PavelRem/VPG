@@ -372,6 +372,7 @@ body a:hover{
     margin-top: 0px;
     font-size: 17px;
     border-bottom: 1px solid red;
+    padding-bottom: 5px;
 }
 #date{
 	float: left;
