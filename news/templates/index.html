@@ -74,11 +74,17 @@
 			  </div>
 			</nav>
 			<div id="Slider" class="carousel slide Slider" data-ride="carousel" data-pause="hover">
+
+     {% if slides %}
+
 				<ol class="carousel-indicators">
 					<li data-target="#Slider" data-slide-to="0" class="active"></li>
 					<li data-target="#Slider" data-slide-to="1"></li>
 					<li data-target="#Slider" data-slide-to="2"></li>
 				</ol>
+
+     {% endif %}
+     
 				<div class="carousel-inner">
           {% if slides %}
 
