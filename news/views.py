@@ -11,8 +11,7 @@ def index(request):
     return redirect('news')
 
 def team(request):
-#    news_data = NewsData.objects.order_by('-pub_date')
-    return render(request, 'Our group.html',  {'team': Team.objects.all()})
+    return render(request, 'team.html',  {'team': Team.objects.all()})
 
 def reference(request):
     reference_list = Reference.objects.all()

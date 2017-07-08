@@ -63,7 +63,7 @@
 				  <ul class="nav navbar-nav">
 					<li class="active"><a href="AboutUs.html">О нас<span class="sr-only">(current)</span>
 					</a></li>
-					<li><a href="OurGroup.html">Наша команда</a></li>
+					<li><a href="{% url 'mynews:team' %}">Наша команда</a></li>
 					<li><a href="Activity.html">Деятельность</a></li>
 					<li><a href="Monitoring.html">Мониторинг</a></li>
 					<li><a href="MediaAboutUs.html">СМИ про нас</a></li>
@@ -84,7 +84,7 @@
 				</ol>
 
      {% endif %}
-     
+
 				<div class="carousel-inner">
           {% if slides %}
 
