@@ -368,7 +368,7 @@ body a:hover{
 .news-text p{
     font-size: 15px;
 }
-#news-text-title h4{
+#news-text-title{
     margin-top: 0px;
     color: red;
     font-size: 17px;
