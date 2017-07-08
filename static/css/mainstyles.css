@@ -370,8 +370,8 @@ body a:hover{
 }
 #news-text-title{
     margin-top: 0px;
-    color: red;
     font-size: 17px;
+    border-bottom: 1px solid red;
 }
 #date{
 	float: left;
