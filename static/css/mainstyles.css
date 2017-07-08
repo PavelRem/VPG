@@ -362,7 +362,7 @@ body a:hover{
 	margin-top: 0px;
 }
 .news-text{
-	max-height: 400px;
+	height: 200px;
 	padding: 10px;
 }
 #date{

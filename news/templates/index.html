@@ -121,10 +121,10 @@
     {% if news %}
          {% for each in news %}
 			  <div class="col-md-4">
-						<div class="news">
+						<div class="news" style="height: 100%;">
 							<img src="" alt="">
 							<div class="news-text">
-							<h4>{{ each.title }}</h4>
+							<h5>{{ each.title }}</h5>
 							<p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
 							</div>
 							<i id = "date">{{ each.pub_date | date:"d.m.Y" }}</i>
