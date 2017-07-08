@@ -18,7 +18,7 @@ def index(request):
     for x in data['slides']:
         x.text = x.text[:230] + ' ...'
 
-    return render(request, 'index.html',  data)
+    return render(request, 'startpage.html',  data)
 
 def team(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
@@ -38,12 +38,10 @@ def reference(request):
     return render(request, 'media_about.html', {'references': references })
 
 def news(request):
-    print(NewsData.objects.order_by("pub_date")[:3].all())
-    return render(request, 'index.html',  {'news': NewsData.objects.order_by("pub_date")[:3].all()})
+    return render(request, 'startpage.html',  {'news': NewsData.objects.order_by("pub_date")[:3].all()})
 
 def fullread(request, id_news):
     return render(request, 'News.html',  {'news_detail': NewsData.objects.get(id=id_news)})
 
 def login(request):
     return render(request, 'login.html',  {})
-    
