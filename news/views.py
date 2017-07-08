@@ -89,7 +89,7 @@ def login(request):
 
 def search(request):
     keywords = request.POST.get('search_input', '')
-    vector = SearchVector('text')
+    vector = SearchVector('text', 'title')
     query = SearchQuery(keywords)
     news_list = NewsData.objects.annotate(rank=SearchRank(vector, query)).order_by('-rank')
     #news_list = NewsData.objects.annotate(similarity=TrigramSimilarity('text', keywords),).filter(similarity__gt=0.3).order_by('-similarity')
