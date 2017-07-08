@@ -132,7 +132,7 @@
       						<div class="news">
       							<img src="{{ each.img_url }}" alt="{{ each.title }} ">
       							<div class="news-text">
-      							<h4 id = "news-text-title">{{ each.title }}</h4>
+      							<h3 id = "news-text-title">{{ each.title }}</h3>
       							<p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
       							</div>
       							<i id = "date">{{ each.pub_date | date:"d.m.Y" }}</i>

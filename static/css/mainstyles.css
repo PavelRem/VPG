@@ -84,7 +84,7 @@ body h1, body h2, body h3, body h4, body h5{
 .logo-text{
 	margin: 35px 20px;
 	display: inline-block;
-    color: #cccccc;
+    text-shadow: 0px 0px 6px #999;
 }
 .search{
 	width:280px;
@@ -139,6 +139,12 @@ body h1, body h2, body h3, body h4, body h5{
 	border-bottom: 3px solid red;
 }
 /*------------------------------*/
+#Slider{
+    border: 1px solid #e7e7e7;
+    -webkit-box-shadow: 0px 0px 8px 6px rgba(0,0,0,0.09);
+    -moz-box-shadow: 0px 0px 8px 6px rgba(0,0,0,0.09);
+    box-shadow: 0px 0px 8px 6px rgba(0,0,0,0.09);
+}
 #Slider, .carousel-inner, .item img, .carousel-control{
     border-radius: 20px;
 }
