@@ -159,13 +159,10 @@ def about(request):
         return render(request, 'about.html',  {'info': ''})
 
 def change_aboutus(request):
-    try:
-        obj = Aboutus.objects.get(pk=1)
-        obj.text = request.POST['text']
-        obj.save()
-    except:
+    if objects.all().count():
+        obj = Aboutus.objects.all()[:1].get()
+    else:
         obj = Aboutus.objects.create()
-        obj.text = request.POST['text']
-        obj.save()
-
+    obj.text = request.POST['text']
+    obj.save()
     return redirect('/admin/about')
