@@ -88,7 +88,6 @@ def fullread(request, id_news):
 def partners(request):
     return render(request, 'partners.html', 'partners': Partners.objects.all()})
 
-
 def search(request):
     keywords = request.POST.get('search_input', '')
     vector = SearchVector('text', 'title')
