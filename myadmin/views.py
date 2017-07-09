@@ -5,7 +5,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.utils.decorators import method_decorator
 
-from news.models import NewsData, Aboutus, Team, Reference
+from news.models import NewsData, Aboutus, Team, Reference, Partners
 
 def activ(request):
     if request.method == "POST":

@@ -18,7 +18,7 @@ class NewsData(models.Model):
 class Activity(models.Model):
     text = models.TextField()
 
-class Team(models.Model):
+class Partners(models.Model):
     name = models.CharField(max_length=100)
     link = models.CharField(max_length=100)
     descrip = models.TextField()

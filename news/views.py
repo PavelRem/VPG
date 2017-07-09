@@ -8,7 +8,7 @@ import django.contrib.postgres
 from django.contrib.postgres.search import SearchVector
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
-from .models import NewsData, Aboutus, Reference, Team
+from .models import NewsData, Aboutus, Reference, Team, Partners
 
 def index(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
