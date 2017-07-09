@@ -167,13 +167,14 @@ def change_aboutus(request):
     obj.save()
     return redirect('/admin/about')
 
+
 def partners(request):
     return render(request, 'partners.html',  {'partners': Partners.objects.all()})
 
 def partners_add(request):
     return render(request, 'partners_add.html',  {})
 
-def team_add(request):
+def partners_add_save(request):
     if request.method == "POST":
         obj = Partners.objects.create()
         obj.name = request.POST.get('name', '')
@@ -183,4 +184,7 @@ def team_add(request):
         obj.save()
         return redirect('/admin/partners/')
 
-    return render(request, 'partners.html',  {})
+    return render(request, 'partners.html',  {'partners': Partners.objects.all()})
+
+
+    

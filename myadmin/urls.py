@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^/partners/$', views.partners, name='partners'),
     url(r'^/news/$', views.news, name='news'),
     url(r'^/partners_add/$', views.partners_add, name='partners_add'),
+    url(r'^/partners_add_save/$', views.partners_add_save, name='partners_add_save'),
     url(r'^/news_add/$', views.news_add, name='news_add'),
     url(r'^/news_update/(?P<id>[0-9]+)$', views.news_update, name='news_update'),
     url(r'^/news_delete/(?P<id>[0-9]+)$', views.news_delete, name='news_delete'),
