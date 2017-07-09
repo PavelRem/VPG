@@ -169,3 +169,18 @@ def change_aboutus(request):
 
 def partners(request):
     return render(request, 'partners.html',  {'partners': Partners.objects.all()})
+
+def partners_add(request):
+    return render(request, 'partners_add.html',  {})
+
+def team_add(request):
+    if request.method == "POST":
+        obj = Partners.objects.create()
+        obj.name = request.POST.get('name', '')
+        obj.descrip = request.POST.get('text', '')
+        obj.link = request.POST.get('ref', '')
+        obj.img = request.FILES.get('photo', '')
+        obj.save()
+        return redirect('/admin/partners/')
+
+    return render(request, 'partners.html',  {})
