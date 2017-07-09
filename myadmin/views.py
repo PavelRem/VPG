@@ -169,7 +169,7 @@ def change_aboutus(request):
 
 
 def partners(request):
-    return render(request, 'partners.html',  {'partners': Partners.objects.all()})
+    return render(request, 'partners_adm.html',  {'partners': Partners.objects.all()})
 
 def partners_add(request):
     return render(request, 'partners_add.html',  {})
@@ -184,7 +184,7 @@ def partners_add_save(request):
         obj.save()
         return redirect('/admin/partners/')
 
-    return render(request, 'partners.html',  {'partners': Partners.objects.all()})
+    return render(request, 'partners_adm.html',  {'partners': Partners.objects.all()})
 
 def partners_update(request, id):
     return render(request, 'partner_update.html',  {'partner': Partners.objects.get(pk=id)})
@@ -198,7 +198,7 @@ def partners_update_save(request, id):
         obj.img = request.FILES.get('photo', '')
         obj.save()
         return redirect('/admin/partners')
-    return render(request, 'partners.html',  {'partners': Partners.objects.all()})
+    return render(request, 'partners_adm.html',  {'partners': Partners.objects.all()})
 
 def partners_delete(request, id):
     Partners.objects.get(pk=id).delete()
