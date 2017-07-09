@@ -186,5 +186,20 @@ def partners_add_save(request):
 
     return render(request, 'partners.html',  {'partners': Partners.objects.all()})
 
+def partners_update(request, id):
+    return render(request, 'partners.html',  {'ref': Partners.objects.get(pk=id)})
 
-    
+def partners_update_save(request, id):
+    if request.method == "POST":
+        obj = Partners.objects.get(pk=id)
+        obj.name = request.POST.get('name', '')
+        obj.descrip = request.POST.get('text', '')
+        obj.link = request.POST.get('ref', '')
+        obj.img = request.FILES.get('photo', '')
+        obj.save()
+        return redirect('/admin/partners')
+    return render(request, 'partners.html',  {'partners': Partners.objects.all()})
+
+def partners_delete(request, id):
+    Partners.objects.get(pk=id).delete()
+    return redirect('/admin/partners/')
