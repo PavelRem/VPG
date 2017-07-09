@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+					<h1 id = "title">Наши партнеры</h1>
+							<div class="text">
+               {% for each in partners %}
+									<div class="member partner">
+											<a href=""><img src="{{ each.img_url }}" alt="{{ each.name }}"></a>
+											<h3>{{ each.name }}</h3>
+											<p>{% autoescape off %} {{ each.descrip }} {% endautoescape %}</p><br>
+											</p>
+									</div>
+								{% endfor %}
+
+							</div>
+
+{% endblock %}

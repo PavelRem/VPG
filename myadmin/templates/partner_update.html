@@ -30,6 +30,7 @@
 
    <form enctype="multipart/form-data" action="{% url 'myadmin:partners_update_save' partner.pk %}" method="post" novalidate>
        <img src="{{ partner.img_url }}" alt="" width = "80px" height="50px"><br>
+       {% csrf_token %}
         <input type="file" id="photo" name="photo" multiple />
         <label for="#title">Название</label>
         <input type="text" class="form-control" name="name" id="partner-title" value="{{ partner.name }}">

@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^activity/$', views.activity, name='activity'),
     url(r'^monitoring/$', views.monitoring, name='monitoring'),
     url(r'^reference/$', views.reference, name='reference'),
+    url(r'^partners/$', views.partners, name='partners'),
     #url(r'^admin/$', views.admin, name='admin'),
     url(r'^$', views.index, name='index'),
     #url(r'^admin/news$', views.admin_news, name='admin_news'),
