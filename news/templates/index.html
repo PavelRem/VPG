@@ -115,7 +115,7 @@
 				<a href="#Slider" class = "right carousel-control" data-slide = "next">
 				<span class ="glyphicon glyphicon-chevron-right"></span></a>
 
-   
+
 
     </div>
      {% endif %}
@@ -183,11 +183,11 @@
 			</div>
        	<div class="partners">
 				<h3><strong>Наши партнеры</strong></h3>
-				<a href="#"><img src="" alt=""></a>
-				<a href="#"><img src="" alt=""></a>
-				<a href="#"><img src="" alt=""></a>
-				<a href="#"><img src="" alt=""></a>
-				<a href="#"><img src="" alt=""></a>
+        {% if partners %}
+           {% for partner in partners %}
+				       <a href="{{ partner.link }}"><img src="{{ partner.img_url }}" alt="{{ partner.name }}"></a>
+           {% endfor %}
+        {% endif %}
     		</div>
        	<div class="footer">
        	    <p>

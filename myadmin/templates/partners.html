@@ -29,9 +29,9 @@
         <tbody>
            {% for each in partners %}
             <tr>
-                <td><img src="{{ each.img_url}}" style="width: 150px;"></td>
+                <td><img src="{{ each.img_url}}" style="width: 200px;"></td>
                 <td> {{ each.name }}</td>
-                <td> {{ each.descrip }}</td>
+                <td> {% autoescape off %}{{ each.descrip }} {% endautoescape %} </td>
                 <td> {{ each.link }}</td>
                 <td><a href="" type="submit" class="btn btn-default">Изменить</a></td>
                 <td><a href="" type="submit" class="btn btn-default">Удалить</a></td>

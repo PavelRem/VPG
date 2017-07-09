@@ -15,10 +15,10 @@ def index(request):
     return redirect('/news/')
 
 def teammembers(request):
-    return render(request, 'teammembers.html',  {'team': Team.objects.all()})
+    return render(request, 'teammembers.html',  {'team': Team.objects.all(), 'partners': Partners.objects.all() })
 
 def aboutus(request):
-    return render(request, 'aboutus.html',  {'aboutus': Aboutus.objects.all()[0]})
+    return render(request, 'aboutus.html',  {'aboutus': Aboutus.objects.all()[0], 'partners': Partners.objects.all()})
 
 def reference(request):
     reference_list = Reference.objects.all()
@@ -31,12 +31,13 @@ def reference(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         references = paginator.page(paginator.num_pages)
-    return render(request, 'media_about.html', {'references': references })
+    return render(request, 'media_about.html', {'references': references, 'partners': Partners.objects.all() })
 
 def news(request):
     data = {
         'news': NewsData.objects.order_by("-pub_date")[:3].all(),
-        'slides': NewsData.objects.filter(slider=True).order_by("-pub_date")[:3].all()
+        'slides': NewsData.objects.filter(slider=True).order_by("-pub_date")[:3].all(),
+        'partners': Partners.objects.all()
     }
     for x in data['news']:
         x.text = x.text[:130] + ' ...'
@@ -62,7 +63,7 @@ def activity(request):
     for n in news:
         n.text = n.text[:130] + ' ...'
 
-    return render(request, 'activity.html', {'activity_news': news })
+    return render(request, 'activity.html', {'activity_news': news, 'partners': Partners.objects.all() })
 
 def monitoring(request):
     news_list = NewsData.objects.filter(monitoring=True).all()
@@ -79,10 +80,10 @@ def monitoring(request):
     for n in news:
         n.text = n.text[:130] + ' ...'
 
-    return render(request, 'monitoring.html', {'monitoring_news': news })
+    return render(request, 'monitoring.html', {'monitoring_news': news, 'partners': Partners.objects.all() })
 
 def fullread(request, id_news):
-    return render(request, 'News.html',  {'news_detail': NewsData.objects.get(pk=id_news)})
+    return render(request, 'News.html',  {'news_detail': NewsData.objects.get(pk=id_news), 'partners': Partners.objects.all()})
 
 def login(request):
     return render(request, 'login.html',  {})
@@ -106,4 +107,4 @@ def search(request):
     for n in news:
         n.text = n.text[:130] + ' ...'
 
-    return render(request, 'searchnews.html', {'searchnews': news, "keywords": keywords })
+    return render(request, 'searchnews.html', {'searchnews': news, "keywords": keywords, 'partners': Partners.objects.all() })
