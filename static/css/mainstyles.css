@@ -90,7 +90,7 @@ body h1, body h2, body h3, body h4, body h5{
     text-shadow: 3px 3px 4px #fff;
 }
 .logo-text h2{
-    font-family: 'Vast Shadow';
+    font-family: 'Bitter', serif;
 }
 .logo-text h4{
     font-size: 22px;
@@ -118,6 +118,7 @@ body h1, body h2, body h3, body h4, body h5{
 	transition:all 0.1s ease;
 }
 .navbar {
+    font-family: 'Oswald', sans-serif;
 	min-height:40px !important;
 	font-size: 18px;
 	margin-bottom: 0px;
