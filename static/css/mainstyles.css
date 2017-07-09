@@ -88,6 +88,7 @@ body h1, body h2, body h3, body h4, body h5{
 	margin: 35px 20px;
 	display: inline-block;
     text-shadow: 3px 3px 6px #fff;
+    font-weight: 600;
 }
 .logo-text h2{
     font-family: 'Vast Shadow';
