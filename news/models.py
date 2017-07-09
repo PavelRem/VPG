@@ -20,6 +20,18 @@ class Activity(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
+    link = models.CharField(max_length=100)
+    descrip = models.TextField()
+    img = models.ImageField(upload_to='partners/')
+
+    @property
+    def img_url(self):
+        if self.img and hasattr(self.img, 'url'):
+            return self.img.url
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=100)
     fb = models.CharField(max_length=100)
     descrip = models.TextField()
     img = models.ImageField(upload_to='team/')

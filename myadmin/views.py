@@ -166,3 +166,6 @@ def change_aboutus(request):
     obj.text = request.POST['text']
     obj.save()
     return redirect('/admin/about')
+
+def partners(request):
+    return render(request, 'partners.html',  {'partners': Partners.objects.all()})

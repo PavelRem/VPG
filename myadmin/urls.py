@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^/filters/activ$', views.activ, name='activ'),
     url(r'^/filters/monitor$', views.monitor, name='monitor'),
     url(r'^/filters/slider$', views.slider, name='slider'),
+    url(r'^/partners/$', views.partners, name='partners'),
     url(r'^/news/$', views.news, name='news'),
     url(r'^/news_add/$', views.news_add, name='news_add'),
     url(r'^/news_update/(?P<id>[0-9]+)$', views.news_update, name='news_update'),
