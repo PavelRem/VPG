@@ -85,9 +85,12 @@ def monitoring(request):
 def fullread(request, id_news):
     return render(request, 'News.html',  {'news_detail': NewsData.objects.get(pk=id_news), 'partners': Partners.objects.all()})
 
+def login(request):
+    return render(request, 'login.html',  {})
+
 def partners(request):
     return render(request, 'partners.html', {'partners': Partners.objects.all()})
-
+    
 def search(request):
     keywords = request.POST.get('search_input', '')
     vector = SearchVector('text', 'title')

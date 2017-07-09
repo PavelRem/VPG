@@ -67,7 +67,7 @@ def news_add(request):
     return render(request, 'news_add.html',  {'news': NewsData.objects.all()})
 
 def news(request):
-    news_list = NewsData.objects.all()
+    news_list = NewsData.objects.all().order_by('-pub_date')
     paginator = Paginator(news_list, 5) # Show 25 contacts per page
     page = request.GET.get('page')
     try:
@@ -80,7 +80,7 @@ def news(request):
     return render(request, 'news.html', {'news': news })
 
 def reference(request):
-    reference_list = Reference.objects.all()
+    reference_list = Reference.objects.all().order_by('-pub_date')
     paginator = Paginator(reference_list, 5) # Show 25 contacts per page
     page = request.GET.get('page')
     try:
