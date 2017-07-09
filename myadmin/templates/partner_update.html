@@ -36,7 +36,7 @@
         <label for="#title">Ссылка</label>
         <input type="text" class="form-control" name="ref" id="partner-ref" value="{{ partner.link }}">
         <label for="#text">Описание</label>
-      <textarea name="text" rows="10" cols="40" id="text">{% autoescape off %}{{ partner.text }} {% endautoescape %}</textarea>
+      <textarea name="text" rows="10" cols="40" id="text">{% autoescape off %}{{ partner.descrip }} {% endautoescape %}</textarea>
       <button id="update-partner" type="submit" class="btn btn-default"> Изменить </button>
     </form>
 
