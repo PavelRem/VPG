@@ -87,7 +87,10 @@ body h1, body h2, body h3, body h4, body h5{
 .logo-text{
 	margin: 35px 20px;
 	display: inline-block;
-    text-shadow: 3px 3px 4px #fff;
+    text-shadow: 0px 0px 10px #fff;
+}
+.logo-text h4{
+    font-size: 22px;
 }
 .search{
 	width:280px;
