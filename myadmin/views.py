@@ -187,7 +187,7 @@ def partners_add_save(request):
     return render(request, 'partners.html',  {'partners': Partners.objects.all()})
 
 def partners_update(request, id):
-    return render(request, 'partners_update.html',  {'ref': Partners.objects.get(pk=id)})
+    return render(request, 'partner_update.html',  {'ref': Partners.objects.get(pk=id)})
 
 def partners_update_save(request, id):
     if request.method == "POST":
