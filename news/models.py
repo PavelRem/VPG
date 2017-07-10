@@ -29,6 +29,11 @@ class Partners(models.Model):
         if self.img and hasattr(self.img, 'url'):
             return self.img.url
 
+class Contacts(models.Model):
+    number = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    address = models.CharField(max_length=100)
+    
 
 class Team(models.Model):
     name = models.CharField(max_length=100)
