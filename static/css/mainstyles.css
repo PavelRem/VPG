@@ -345,6 +345,8 @@ body{
 .partner img{
     width: 100%;
     border-bottom: 2px solid #e7e7e7;
+    margin: auto, auto;
+    max-height: 120px;
 }
 .partner a{
     text-decoration: none;
