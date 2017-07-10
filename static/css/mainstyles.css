@@ -406,7 +406,7 @@ body{
     background-color: #f7f7f7;
     border: 1px solid #e7e7e7;
     border-radius: 3px;
-    border-top: 3px solid red;
+    border-bottom: 3px solid red;
 }
 .news img{
     width: 100%;
