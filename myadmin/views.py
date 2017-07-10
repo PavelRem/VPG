@@ -106,6 +106,9 @@ def news_add(request):
         return redirect('/admin/news')
     return render(request, 'news_add.html',  {'news': NewsData.objects.all()})
 
+def adminindex(request):
+    return redirect('/admin/news')
+
 def news(request):
     news_list = NewsData.objects.all().order_by('-pub_date')
     paginator = Paginator(news_list, 5) # Show 25 contacts per page
