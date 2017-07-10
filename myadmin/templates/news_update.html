@@ -43,14 +43,14 @@
         <img src="{{news.img_url}}">
         <input type="file" id="photo" name="photo" multiple />
         <label for="#title">Заголовок</label>
-        <input type="text" class="form-control" name="title" id="news-title" value="{{news.title}}">
+        <input type="text" class="form-control" name="title" id="news-title" value="{{news.title}}"><br>
         <div class="form-group col-md-6">
            <label class="control-label" for="datefrom" > Період з:</label>
            <div class="inner-addon right-addon">
              <i class="glyphicon glyphicon-calendar"></i>
              <input name="datefrom" style="font-size: 90%;" id="datefrom" data-provide="datepicker" type="text" class="form-control" placeholder="Наразі будь-який" />
           </div>
-        </div>
+        </div> <br><br>
         <label for="#text">Текст</label>
       <textarea name="text" rows="10" cols="40" id="text">{% autoescape off %}{{news.text}} {% endautoescape %}</textarea>
       <button id="add-news" type="submit" class="btn btn-default"> Изменить </button>
