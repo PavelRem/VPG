@@ -255,11 +255,11 @@ def user_update(request, id):
     return render(request, 'user_add.html',  {'prtcl_user': User.objects.get(pk=id)})
 
 def user_add_save(request):
-    user = User.objects.create()
-    user.is_superuser = True
-    user.set_password(request.POST.get('password', ''))
-    user.username = request.POST.get('name', '')
-    user.email = request.POST.get('email', '')
+    user = User.objects.create_user(
+        username=request.POST.get('name', ''),
+        email=request.POST.get('password', ''),
+        password=request.POST.get('email', '')
+    )
     user.save()
     return redirect('/admin/users')
 
