@@ -41,7 +41,7 @@
         <img src="{{news.img_url}}">
         <input type="file" id="photo" name="photo" multiple />
         <label for="#date-inp">Дата</label>
-        <input type="date" class="form-control" name="date" id="date-inp">
+        <input type="date" class="form-control" name="date" id="date-inp" value="{{ news.pub_date | date:"Y-m-d"}}">
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="{{news.title}}">
         <label for="#text">Текст</label>
