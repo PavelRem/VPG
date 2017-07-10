@@ -50,9 +50,9 @@ def news_update_save(request, id):
             date_lst = pub_date.split('-')
         else:
             date_lst = pub_date.split('.')
-        year = int(date_lst[2])
+        year = int(date_lst[0])
         month = int(date_lst[1])
-        day = int(date_lst[0])
+        day = int(date_lst[2])
         obj.pub_date = datetime.date(year, month, day)
         if request.FILES.get('photo', ''):
             obj.img = request.FILES.get('photo', '')
@@ -78,9 +78,9 @@ def news_add(request):
             date_lst = pub_date.split('-')
         else:
             date_lst = pub_date.split('.')
-        year = int(date_lst[2])
+        year = int(date_lst[0])
         month = int(date_lst[1])
-        day = int(date_lst[0])
+        day = int(date_lst[2])
         obj.pub_date = datetime.date(year, month, day)
         obj.activity = True if request.POST.get('activity', '') else False
         obj.monitoring =  True if request.POST.get('monitor', '') else False
