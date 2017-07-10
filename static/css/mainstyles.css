@@ -344,9 +344,6 @@ body{
     border-bottom: 2px solid #e7e7e7;
 }
 .partner img{
-    position: absolute;
-    top: auto;
-    bottom: auto;
     padding: 5px;
     width: 100%;
     max-height: 118px;
