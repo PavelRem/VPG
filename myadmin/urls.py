@@ -35,5 +35,6 @@ urlpatterns = [
     url(r'^/change_aboutus/', views.change_aboutus, name='change_aboutus'),
     url(r'^/about/$', views.about, name='about'),
     url(r'^/contacts/$', views.contacts, name='contacts'),
+    url(r'^/users/$', views.users, name='users'),
     url(r'^/change_contacts/', views.change_contacts, name='change_contacts'),
 ]

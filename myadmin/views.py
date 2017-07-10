@@ -5,6 +5,7 @@ from django import forms
 from django.contrib.auth import authenticate
 from django.utils.decorators import method_decorator
 import datetime
+from django.contrib.auth.models import User
 
 from news.models import NewsData, Aboutus, Team, Reference, Partners, Contacts
 
@@ -243,3 +244,15 @@ def change_contacts(request):
     obj.address = request.POST['address']
     obj.save()
     return redirect('/admin/contacts')
+
+def add_user(request):
+    user = User.objects.create()
+    user.is_superuser = True
+    user.set_password(request.POST.get('password', ''))
+    user.set_name(request.POST.get('name', ''))
+    user.set_email(request.POST.get('email', ''))
+    user.save()
+    return redirect('/admin/users')
+
+def users(request):
+    return render(request, 'users.html',  {'users': User.objects.all()})
