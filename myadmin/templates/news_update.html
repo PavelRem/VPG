@@ -3,6 +3,7 @@
 
 {% block body %}
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css" type="text/css" media="all">
 
@@ -43,10 +44,12 @@
         <input type="file" id="photo" name="photo" multiple />
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="{{news.title}}">
-        <label class="control-label" for="datefrom" > Період з:</label>
-        <div class="inner-addon right-addon">
-        <i class="glyphicon glyphicon-calendar"></i>
-        <input name="datefrom" style="font-size: 90%;" id="datefrom" data-provide="datepicker" type="text" class="form-control" />
+        <div class="form-group col-md-6">
+           <label class="control-label" for="datefrom" > Період з:</label>
+           <div class="inner-addon right-addon">
+             <i class="glyphicon glyphicon-calendar"></i>
+             <input name="datefrom" style="font-size: 90%;" id="datefrom" data-provide="datepicker" type="text" class="form-control" placeholder="Наразі будь-який" />
+          </div>
         </div>
         <label for="#text">Текст</label>
       <textarea name="text" rows="10" cols="40" id="text">{% autoescape off %}{{news.text}} {% endautoescape %}</textarea>
