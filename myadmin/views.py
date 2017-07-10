@@ -58,7 +58,7 @@ def news_add(request):
         obj = NewsData.objects.create()
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
-        obj.img = request.FILES.get('photo', '')
+        obj.pub_date = request.POST.get('datefrom', '')
         obj.activity = True if request.POST.get('activity', '') else False
         obj.monitoring =  True if request.POST.get('monitor', '') else False
         obj.slider =  True if request.POST.get('slider', '') else False
@@ -198,7 +198,7 @@ def partners_update_save(request, id):
         obj.img = request.FILES.get('photo', '')
         obj.save()
         return redirect('/admin/partners')
-    return render(request, 'partners_adm.html',  {'partners': Partners.objects.all()})
+    return render(request, 'partners_admdatefrom.html',  {'partners': Partners.objects.all()})
 
 def partners_delete(request, id):
     Partners.objects.get(pk=id).delete()
