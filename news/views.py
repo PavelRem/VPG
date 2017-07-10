@@ -89,7 +89,7 @@ def login(request):
     return render(request, 'login.html',  {})
 
 def partners(request):
-    return render(request, 'partners.html', {'partners': Partners.objects.all(), 'partnerspage': 1})
+    return render(request, 'partners.html', {'partners': Partners.objects.all(), 'partnerspage': [1]})
 
 def search(request):
     keywords = request.POST.get('search_input', '')
