@@ -34,7 +34,6 @@
           <tr>
             <th>Дата</th>
             <th>Заголовок</th>
-            <th>Ссылка</th>
             <th>Источник</th>
             <th></th>
             <th></th>
@@ -46,7 +45,6 @@
             <tr>
                 <td>{{ ref.pub_date | date:"d/m/Y"}}</td>
                 <td>{{ ref.title }}</td>
-                <td>{{ ref.link }}</td>
                 <td>{{ ref.source }}</td>
                 <td><a href="{% url 'myadmin:reference_update' ref.pk %}" type="submit" class="btn btn-default">Изменить</a></td>
                 <td><a type="submit" class="btn btn-default" data-toggle="modal" data-target="#Confirm{{ ref.pk }}">Удалить</a></td>
