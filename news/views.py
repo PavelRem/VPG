@@ -35,7 +35,7 @@ def reference(request):
 
 def news(request):
     data = {
-        'news': NewsData.objects.order_by("-pub_date")[:3].all(),
+        'news': NewsData.objects.order_by("-pub_date")[:4].all(),
         'slides': NewsData.objects.filter(slider=True).order_by("-pub_date")[:3].all(),
         'partners': Partners.objects.all()
     }
