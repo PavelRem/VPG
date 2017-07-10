@@ -31,26 +31,8 @@
     .datepicker {
       z-index: 100;
     }
-
-.inner-addon {
-  position: relative;
-}
-
-/* style glyph */
-.inner-addon .glyphicon {
-  position: absolute;
-  padding: 10px;
-  pointer-events: none;
-}
-
-/* align glyph */
-.left-addon .glyphicon  { left:  0px;}
-.right-addon .glyphicon { right: 0px;}
-
-/* add padding  */
-.left-addon input  { padding-left:  30px; }
-.right-addon input { padding-right: 30px; }
-
+    
+    
 </style>
 <div class="container">
    <div class="inner-content">
@@ -61,18 +43,12 @@
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="">
         <label for="#activity">Деятельность</label>
-        <input type="checkbox"  name="activity" id="news-title" >
+        <input type="checkbox" name="slider"><br>
         <label for="#monitor">Мониторинг</label>
-        <input type="checkbox" name="monitor" id="news-title" >
+        <input type="checkbox" name="monitor" >
         <label for="#activity">Слайдер</label>
-        <input type="checkbox" name="slider" id="news-title"><br>
-        <div class="form-group col-md-6">
-           <label class="control-label" for="datefrom" > Дата:</label>
-           <div class="inner-addon right-addon">
-             <i class="glyphicon glyphicon-calendar"></i>
-             <input name="datefrom" style="font-size: 90%;" id="datefrom" data-provide="datepicker" type="text" class="form-control" placeholder="Наразі будь-який" />
-          </div>
-        </div> <br><br>
+        <input type="checkbox" name="slider"><br>
+        <input type="date" name="date" id="date"><br>
         <label for="#text">Текст</label>
       <textarea name="text" rows="10" cols="40" id="text"></textarea>
       <button id="add-news" type="submit" class="btn btn-default"> Добавить </button>
@@ -80,28 +56,6 @@
     </div>
 </div>
 
-<script>
-
-  $.datepicker.regional['it'] = {
-      monthNames: ['Січень','Лютий','Березень','Квітень','Травень','Червень', 'Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'], // set month names
-      monthNamesShort: ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'], // set short month names
-      dayNames: ['Понеділок','Вівторок','Середа','Четвер',"П'ятниця",'Субота','Неділя'], // set days names
-      dayNamesShort: ['ПН','ВВ','СР','ЧТ','ПТ','СБ','НД'], // set short day names
-      dayNamesMin: ['ПН','ВВ','СР','ЧТ','ПТ','СБ','НД'], // set more short days names
-      dateFormat: 'dd/mm/yy' // set format date
-  };
-
-  $.datepicker.setDefaults($.datepicker.regional['it']);
-
-  $('#datefrom').datepicker({
-      format: 'mm-dd-yyyy',
-  });
-
-  $('#dateto').datepicker({
-      format: 'mm-dd-yyyy',
-  });
-
-</script>
 
   <script>
   tinymce.init({
