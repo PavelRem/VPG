@@ -155,8 +155,10 @@
                {% for partner in partners %}
                 <div class="partner shadow">
                     <a href="{{ partner.link }}">
-                        <img src="{{ partner.img_url }}" alt="{{ partner.name }}">
-                        <p>{{ partner.name }}</p>
+                       <div class="partner-img">
+                           <img src="{{ partner.img_url }}" alt="{{ partner.name }}">
+                       </div>
+                       <p>{{ partner.name }}</p>
                     </a>
                 </div>
                 {% endfor %}
