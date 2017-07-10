@@ -252,14 +252,14 @@ def user_add(request):
     return render(request, 'user_add.html', {})
 
 def user_update(request, id):
-    return render(request, 'user_add.html',  {'user': User.objects.get(pk=id)})
+    return render(request, 'user_add.html',  {'prtcl_user': User.objects.get(pk=id)})
 
 def user_add_save(request):
     user = User.objects.create()
     user.is_superuser = True
     user.set_password(request.POST.get('password', ''))
-    user.set_username(request.POST.get('name', ''))
-    user.set_email(request.POST.get('email', ''))
+    user.username = request.POST.get('name', '')
+    user.email = request.POST.get('email', '')
     user.save()
     return redirect('/admin/users')
 
@@ -267,8 +267,8 @@ def user_update_save(request, id):
     user = User.objects.get(pk=id)
     user.is_superuser = True
     user.set_password(request.POST.get('password', ''))
-    user.set_username(request.POST.get('name', ''))
-    user.set_email(request.POST.get('email', ''))
+    user.username = request.POST.get('name', '')
+    user.email = request.POST.get('email', '')
     user.save()
     return redirect('/admin/users')
 
