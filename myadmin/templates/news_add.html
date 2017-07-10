@@ -15,7 +15,7 @@
     }
     #news-title{
         margin-bottom: 20px;
-        width: 350px;
+        width: 100%;
     }
     #add-news{
         margin-top: 20px;
@@ -31,7 +31,7 @@
     #date-inp{
         margin-left: 0px;
         margin-bottom: 20px;
-        width: 350px;
+        width: 100%;
     }
     .checkbox-inline{
         padding-left: 20px;
@@ -47,11 +47,10 @@
    <form enctype="multipart/form-data" action="{% url 'myadmin:news_add' %}" method="post" novalidate>
         {% csrf_token %}
         <input type="file" id="photo" name="photo" multiple />
-        <label for="#title">Заголовок</label>
-        <input type="text" class="form-control" name="title" id="news-title" value="">
-        
         <label for="#date-inp">Дата</label>
         <input type="date" class="form-control" name="date" id="date-inp"><br>
+        <label for="#title">Заголовок</label>
+        <input type="text" class="form-control" name="title" id="news-title" value="">
         
         <div class="chek">
             <label class="checkbox-inline"><input type="checkbox" value="">Деятельность</label>
