@@ -124,7 +124,7 @@
             <div class="donate sidebox shadow">
                 <h4><strong>Поддержите нашу деятельность</strong></h4>
                 <a id = "donate" type="button" class="btn btn-default" href ="Donate.html">
-                <img src="../images/heart.png" alt="">Поддержать
+                <img src="{% static '/images/heart.png' %}">Поддержать
                 </a>
             </div>
             <div class="report sidebox shadow">
@@ -151,12 +151,15 @@
         <div class="partners sidebox shadow">
             <h3>Наши Партнеры</h3>
             <div class="owl-carousel">
+               {% if partners %}
+               {% for partner in partners %}
                 <div class="partner shadow">
-                    <a href="#">
-                        <img src="http://www.coca-cola.co.uk/content/dam/journey/gb/en/hidden/History/Heritage/596x334/the_logo_story_01122014_596x334.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet.</p>
+                    <a href="{{ partner.link }}">
+                        <img src="{{ partner.img_url }}" alt="{{ partner.name }}">
+                        <p>{{ partner.name }}</p>
                     </a>
                 </div>
+                {% endif %}
             </div>
         </div>
   	</div>
