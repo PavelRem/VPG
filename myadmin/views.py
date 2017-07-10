@@ -257,8 +257,8 @@ def user_update(request, id):
 def user_add_save(request):
     user = User.objects.create_user(
         username=request.POST.get('name', ''),
-        email=request.POST.get('password', ''),
-        password=request.POST.get('email', '')
+        email=request.POST.get('email', ''),
+        password=request.POST.get('password', '')
     )
     user.save()
     return redirect('/admin/users')
