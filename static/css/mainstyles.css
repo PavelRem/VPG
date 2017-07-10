@@ -419,7 +419,9 @@ body{
 }
 .news-text{
 	height: 170px;
-	padding: 20px;
+	padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .news-text p{
     font-size: 14px;
