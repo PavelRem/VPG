@@ -44,7 +44,12 @@ def news_update_save(request, id):
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
         pub_date = request.POST.get('datefrom', '')
-        date_lst = pub_date.split('/') if '/' in pub_date else pub_date.split('.')
+        if '/' in pub_date:
+            date_lst = pub_date.split('/')
+        elif '-' in pub_date:
+            date_lst = pub_date.split('-')
+        else:
+            date_lst = pub_date.split('.')
         year = int(date_lst[2])
         month = int(date_lst[1])
         day = int(date_lst[0])
@@ -67,7 +72,12 @@ def news_add(request):
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
         pub_date = request.POST.get('datefrom', '')
-        date_lst = date_lst = pub_date.split('/') if '/' in pub_date else pub_date.split('.')
+        if '/' in pub_date:
+            date_lst = pub_date.split('/')
+        elif '-' in pub_date:
+            date_lst = pub_date.split('-')
+        else:
+            date_lst = pub_date.split('.')
         year = int(date_lst[2])
         month = int(date_lst[1])
         day = int(date_lst[0])
