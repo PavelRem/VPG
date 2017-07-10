@@ -37,11 +37,11 @@
 <div class="container">
    <div class="inner-content">
    <form enctype="multipart/form-data" action="{% url 'myadmin:news_add' %}" method="post" novalidate>
-       <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
         {% csrf_token %}
         <input type="file" id="photo" name="photo" multiple />
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="">
+        
         <label for="#activity">Деятельность</label>
         <input type="checkbox" name="slider"><br>
         <label for="#monitor">Мониторинг</label>
