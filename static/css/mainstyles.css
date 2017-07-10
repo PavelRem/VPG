@@ -341,11 +341,12 @@ body{
 .partner-img{
     width: 100%;
     height: 120px;
+    border-bottom: 2px solid #e7e7e7;
 }
 .partner img{
     width: 100%;
-    border-bottom: 2px solid #e7e7e7;
-    margin: auto, auto;
+    margin-top: 50%;
+    margin-bottom: 50%;
     max-height: 120px;
 }
 .partner a{
