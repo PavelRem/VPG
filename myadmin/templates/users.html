@@ -35,12 +35,13 @@
             <th>Имя</th>
             <th>Эл. почта</th>
             <th>Пароль</th>
+            <th></th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
            {% for each in users %}
             <tr>
-                <td><img src="{{ each.img_url }}" alt="" width = "80px" height="50px"></td>
                 <td>{{ each.name }}</td>
                 <td>{{ each.email }}</td>
                 <td>{{ each.password }}</td>
