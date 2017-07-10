@@ -75,11 +75,11 @@
                 </ol>
                 <div class="carousel-inner">
                    {% for slide in slides %}
-                    <div class="item item {% if forloop.counter == 1  %} active {% endif %}">
+                    <div class="item {% if forloop.counter == 1  %} active {% endif %}">
                         <a href="{% url 'mynews:fullread' slide.pk %}">
-                            <img src="{{ slide.img_url }}">
+                            <img src="{{ slide.img_url }} ">
                             <div class="carousel-caption">
-                                <h1>{{ slide.title }}</h1>
+                                <h1> {{ slide.title }} </h1>
                                 <p>{% autoescape off %} {{ slide.text }} {% endautoescape %}</p>
                             </div>
                         </a>
