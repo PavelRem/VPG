@@ -229,9 +229,9 @@ def partners_delete(request, id):
 
 def contacts(request):
     try:
-        return render(request, 'contacts.html',  {'info': Contacts.objects.all()[0] })
+        return render(request, 'contactsmng.html',  {'info': Contacts.objects.all()[0] })
     except:
-        return render(request, 'contacts.html',  {})
+        return render(request, 'contactsmng.html',  {})
 
 def change_contacts(request):
     if Contacts.objects.all().count():
