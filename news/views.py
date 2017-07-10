@@ -89,7 +89,7 @@ def login(request):
     return render(request, 'login.html',  {})
 
 def contacts(request):
-    return render(request, 'contacts.html',  {'contacts': Contacts.objects.all()[:1]})
+    return render(request, 'contacts.html',  {'info': Contacts.objects.all()[:1]})
 
 def partners(request):
     return render(request, 'partners.html', {'partners': Partners.objects.all(), 'partnerspage': [1]})
