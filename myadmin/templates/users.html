@@ -27,7 +27,7 @@
 <div class="container">
    {% csrf_token %}
    <div class="inner-content">
-    <a id = "add-news" href="{% url 'myadmin:news_add' %}" type="submit" class="btn btn-default">Добавить Новость</a>
+    <a id = "add-news" href="{% url 'myadmin:add_user' %}" type="submit" class="btn btn-default">Добавить Новость</a>
     <h3>Список новостей</h3>
       <table class="table table-hover">
         <thead>
@@ -45,7 +45,7 @@
                 <td>{{ each.username }}</td>
                 <td>{{ each.email }}</td>
                 <td>{{ each.password }}</td>
-                <td><a href="{% url 'myadmin:news_update' each.pk  %}" type="submit" class="btn btn-default">Изменить</a></td>
+                <td><a href="{% url 'myadmin:user_update' each.pk  %}" type="submit" class="btn btn-default">Изменить</a></td>
                 <td><a type="submit" class="btn btn-default" data-toggle="modal" data-target="#Confirm{{ each.pk }}">Удалить</a></td>
             </tr>
 
@@ -56,7 +56,7 @@
                     <h3>Вы уверены?</h3>
                   </div>
                   <div class="modal-footer">
-                    <a href="{% url 'myadmin:news_delete' each.pk  %}" type="submit" class="btn btn-default" >Да</a>
+                    <a href="{% url 'myadmin:user_delete' each.pk  %}" type="submit" class="btn btn-default" >Да</a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Нет</button>
                   </div>
                 </div>

@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+
+<style>
+
+</style>
+<div class="container">
+   <div class="inner-content">
+
+   {% if user %}
+   <form enctype="multipart/form-data" action="{% url 'myadmin:user_update_save' user.pk %}" method="post" novalidate>
+        {% csrf_token %}
+        <label for="#name">Имя</label>
+        <input type="text" class="form-control" name="name" id="name-inp" value="{{ user.username }}">
+        <label for="#email">Эл. почта</label>
+        <input type="email" class="form-control" name="email" id="email-title" value="{{ user.email }}">
+        <label for="#password">Пароль</label>
+        <input type="text" class="form-control" name="password" id="password-title" value="{{ user.password }}">
+        <button type="submit" class="btn btn-default"> Сохранить </button>
+    </form>
+    {% else %}
+    <form enctype="multipart/form-data" action="{% url 'myadmin:user_add_save' %}" method="post" novalidate>
+         {% csrf_token %}
+         <label for="#name">Имя</label>
+         <input type="text" class="form-control" name="name" id="name-inp">
+         <label for="#email">Эл. почта</label>
+         <input type="email" class="form-control" name="email" id="email-title" value="">
+         <label for="#password">Пароль</label>
+         <input type="text" class="form-control" name="password" id="password-title" value="">
+         <button type="submit" class="btn btn-default"> Добавить </button>
+     </form>
+    {% endif %}
+    </div>
+</div>
+
+  {% endblock %}

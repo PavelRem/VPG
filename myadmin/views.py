@@ -245,7 +245,16 @@ def change_contacts(request):
     obj.save()
     return redirect('/admin/contacts')
 
-def add_user(request):
+def users(request):
+    return render(request, 'users.html',  {'users': User.objects.all()})
+
+def user_add(request):
+    return render(request, 'user_add.html', {})
+
+def user_update(request, id):
+    return render(request, 'user_add.html',  {'user': User.objects.get(pk=id)})
+
+def user_add_save(request):
     user = User.objects.create()
     user.is_superuser = True
     user.set_password(request.POST.get('password', ''))
@@ -254,5 +263,16 @@ def add_user(request):
     user.save()
     return redirect('/admin/users')
 
-def users(request):
-    return render(request, 'users.html',  {'users': User.objects.all()})
+def user_update_save(request, id):
+    user = User.objects.get(pk=id)
+    user.is_superuser = True
+    user.set_password(request.POST.get('password', ''))
+    user.set_username(request.POST.get('name', ''))
+    user.set_email(request.POST.get('email', ''))
+    user.save()
+    return redirect('/admin/users')
+
+def user_delete(request, id):
+    user = User.objects.get(pk=id)
+    user.delete()
+    return redirect('/admin/users')

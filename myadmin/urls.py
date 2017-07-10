@@ -35,6 +35,10 @@ urlpatterns = [
     url(r'^/change_aboutus/', views.change_aboutus, name='change_aboutus'),
     url(r'^/about/$', views.about, name='about'),
     url(r'^/contacts/$', views.contacts, name='contacts'),
-    url(r'^/users/$', views.users, name='users'),
     url(r'^/change_contacts/', views.change_contacts, name='change_contacts'),
+    url(r'^/users/$', views.users, name='users'),
+    url(r'^/user_add/$', views.user_add, name='user_add'),
+    url(r'^/user_add_save/$', views.user_add_save, name='user_add_save'),
+    url(r'^/user_update_save/$', views.user_update_save, name='user_update_save'),
+    url(r'^/user_delete/$', views.user_delete, name='user_delete'),
 ]
