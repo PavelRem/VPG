@@ -7,7 +7,6 @@ app_name = 'myadmin'
 urlpatterns = [
     #url(r'^activity/$', views.activity, name='activity'),
 #    url(r'^/change_aboutus/', views.change_team, name='change_team')
-    url(r'^/(?P<id>[a-z]+)$', views.adminindex, name='adminindex'),
     url(r'^/$', views.adminindex, name='adminindex'),
     url(r'^/filters/activ$', views.activ, name='activ'),
     url(r'^/filters/monitor$', views.monitor, name='monitor'),
