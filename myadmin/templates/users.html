@@ -27,7 +27,7 @@
 <div class="container">
    {% csrf_token %}
    <div class="inner-content">
-    <a id = "add-news" href="{% url 'myadmin:add_user' %}" type="submit" class="btn btn-default">Добавить Новость</a>
+    <a id = "add-news" href="{% url 'myadmin:user_add' %}" type="submit" class="btn btn-default">Добавить Новость</a>
     <h3>Список новостей</h3>
       <table class="table table-hover">
         <thead>
