@@ -233,7 +233,7 @@ def contacts(request):
     except:
         return render(request, 'contacts.html',  {})
 
-def change_aboutus(request):
+def change_contacts(request):
     if Contacts.objects.all().count():
         obj = Contacts.objects.all()[:1].get()
     else:
@@ -243,3 +243,14 @@ def change_aboutus(request):
     obj.address = request.POST['address']
     obj.save()
     return redirect('/admin/about')
+
+def change_aboutus(request):
+    if Contacts.objects.all().count():
+        obj = Contacts.objects.all()[:1].get()
+    else:
+        obj = Contacts.objects.create()
+    obj.number = request.POST['tel']
+    obj.email = request.POST['email']
+    obj.address = request.POST['address']
+    obj.save()
+    return redirect('/admin/contacts')
