@@ -244,6 +244,7 @@ body{
     padding-bottom: 10px;
     border-bottom: 2px solid #e7e7e7;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 #donate{
 	border: 1px solid #999;
@@ -320,6 +321,7 @@ body{
     width: 100%;
 }
 .partners h3{
+    text-transform: uppercase;
     margin-top: 5px;
     padding-bottom: 10px;
     border-bottom: 2px solid #e7e7e7;
