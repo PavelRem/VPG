@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django import forms
 from django.contrib.auth import authenticate
 from django.utils.decorators import method_decorator
+import datetime
 
 from news.models import NewsData, Aboutus, Team, Reference, Partners
 
@@ -42,7 +43,14 @@ def news_update_save(request, id):
         obj = NewsData.objects.get(pk=id)
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
-        obj.img = request.FILES.get('photo', '')
+        pub_date = request.POST.get('datefrom', '')
+        date_lst = pub_date.split('/')
+        year = int(date_lst[2])
+        month = int(date_lst[1])
+        day = int(date_lst[0])
+        obj.pub_date = datetime.date(year, month, day)
+        if request.FILES.get('photo', ''):
+            obj.img = request.FILES.get('photo', '')
         obj.save()
         return redirect('/admin/news')
     return render(request, 'news_update.html',  {'news': NewsData.objects.all()})
@@ -58,7 +66,12 @@ def news_add(request):
         obj = NewsData.objects.create()
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
-        obj.pub_date = request.POST.get('datefrom', '')
+        pub_date = request.POST.get('datefrom', '')
+        date_lst = pub_date.split('/')
+        year = int(date_lst[2])
+        month = int(date_lst[1])
+        day = int(date_lst[0])
+        obj.pub_date = datetime.date(year, month, day)
         obj.activity = True if request.POST.get('activity', '') else False
         obj.monitoring =  True if request.POST.get('monitor', '') else False
         obj.slider =  True if request.POST.get('slider', '') else False

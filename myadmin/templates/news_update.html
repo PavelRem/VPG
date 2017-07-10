@@ -33,6 +33,30 @@
         height: 150px;
         margin-bottom: 20px;
     }
+
+    .datepicker {
+      z-index: 100;
+    }
+
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
 </style>
 {% if news %}
 <div class="container">
@@ -45,7 +69,7 @@
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="{{news.title}}"><br>
         <div class="form-group col-md-6">
-           <label class="control-label" for="datefrom" > Період з:</label>
+           <label class="control-label" for="datefrom" > Дата:</label>
            <div class="inner-addon right-addon">
              <i class="glyphicon glyphicon-calendar"></i>
              <input name="datefrom" style="font-size: 90%;" id="datefrom" data-provide="datepicker" type="text" class="form-control" placeholder="Наразі будь-який" />
