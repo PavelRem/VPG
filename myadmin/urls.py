@@ -39,7 +39,7 @@ urlpatterns = [
     url(r'^/users/$', views.users, name='users'),
     url(r'^/user_add/$', views.user_add, name='user_add'),
     url(r'^/user_add_save/$', views.user_add_save, name='user_add_save'),
-    url(r'^/user_update_save/$', views.user_update_save, name='user_update_save'),
-    url(r'^/user_update/$', views.user_update, name='user_update'),
-    url(r'^/user_delete/$', views.user_delete, name='user_delete'),
+    url(r'^/user_update_save/(?P<id>[0-9]+)$$', views.user_update_save, name='user_update_save'),
+    url(r'^/user_update/(?P<id>[0-9]+)$$', views.user_update, name='user_update'),
+    url(r'^/user_delete/(?P<id>[0-9]+)$$', views.user_delete, name='user_delete'),
 ]
