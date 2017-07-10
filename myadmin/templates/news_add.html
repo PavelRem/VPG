@@ -30,7 +30,8 @@
     #date-inp{
         margin-left: 0px;
         margin-bottom: 20px;
-        width: 200px;
+        margin-top: 20px;
+        width: 300px;
     }
     
 </style>
@@ -42,6 +43,9 @@
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="">
         
+        <label for="#date-inp">Дата</label>
+        <input type="date" class="form-control" name="date" id="date-inp"><br>
+        
         <label for="#activity">Деятельность</label>
         <input type="checkbox" name="slider"><br>
         <label for="#monitor">Мониторинг</label>
@@ -49,8 +53,6 @@
         <label for="#activity">Слайдер</label>
         <input type="checkbox" name="slider"><br>
         
-        <label for="#date-inp">Дата</label>
-        <input type="date" class="form-control" name="date" id="date-inp"><br>
         <label for="#text">Текст</label>
       <textarea name="text" rows="10" cols="40" id="text"></textarea>
       <button id="add-news" type="submit" class="btn btn-default"> Добавить </button>
