@@ -226,3 +226,20 @@ def partners_update_save(request, id):
 def partners_delete(request, id):
     Partners.objects.get(pk=id).delete()
     return redirect('/admin/partners/')
+
+def contacts(request):
+    try:
+        return render(request, 'contacts.html',  {'info': Contacts.objects.all()[0] })
+    except:
+        return render(request, 'contacts.html',  {})
+
+def change_aboutus(request):
+    if Contacts.objects.all().count():
+        obj = Contacts.objects.all()[:1].get()
+    else:
+        obj = Contacts.objects.create()
+    obj.number = request.POST['tel']
+    obj.email = request.POST['email']
+    obj.address = request.POST['address']
+    obj.save()
+    return redirect('/admin/about')

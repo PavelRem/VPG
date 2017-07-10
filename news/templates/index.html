@@ -10,7 +10,7 @@
     <link rel="icon" href="{% static '/images/favicon.ico' %}"/>
     <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static '/css/mainstyles.css' %}">
-    
+
     <link rel="stylesheet" href="{% static '/css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static '/css/owl.theme.default.css' %}">
   </head>
@@ -57,8 +57,8 @@
                         <li><a href="{% url 'mynews:activity' %}">Деятельность</a></li>
                         <li><a href="{% url 'mynews:monitoring' %}">Мониторинг</a></li>
                         <li><a href="{% url 'mynews:reference' %}">СМИ про нас</a></li>
-                        <li><a href="#">Партнеры</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="{% url 'mynews:partners' %}">Партнеры</a></li>
+                        <li><a href="{% url 'mynews:contacts' %}">Контакты</a></li>
                     </ul>
                 </div>
             </div>
@@ -178,8 +178,8 @@
             </div>
         </div>
   	</div>
-  	
-  	
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
@@ -189,7 +189,7 @@
            $('li.active').removeClass('active');
            $('a[href="' + location.pathname + '"]').closest('li').addClass('active');
         });
-        
+
         $('.owl-carousel').owlCarousel({
             loop:true,
             autoplay: true,

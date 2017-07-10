@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+<style>
+    #about-btn{
+        height: 40px;
+        width: 150px;
+        float: right;
+    }
+    .inner-content{
+        min-height: 600px;
+    }
+</style>
+
+<div class="container">
+   <div class="inner-content">
+        <form enctype="multipart/form-data" action="{% url 'myadmin:change_contacts' %}" method="post" id="newsdata_form" novalidate class = "m-input">
+            {% csrf_token %}
+            <label for="#email">Эл. адрес</label>
+            <input type="email" class="form-control" name="email" id="email" value="{{ info.email }}">
+            <label for="#tel">Телефон</label>
+            <input type="text" class="form-control" name="tel" id="tel" value="{{ info.number }}">
+            <label for="#address">Адрес</label>
+            <input type="text" class="form-control" name="address" id="address" value="{{ info.address }}">
+            <button type="submit" id="about-btn" class="btn btn-default" onclick="get_editor_content()">{% if info %} Изменить {% else %} Добавить {% endif%}</button>
+        </form>
+    </div>
+ </div>
+  <script>
+  tinymce.init({
+    selector: 'textarea',
+    height: 400,
+    menubar: true,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table contextmenu paste code'
+    ],
+    toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    content_css: [
+      ]
+  });
+  </script>
+
+  {% endblock %}

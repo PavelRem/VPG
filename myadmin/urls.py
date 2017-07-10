@@ -34,4 +34,6 @@ urlpatterns = [
     url(r'^/team/team_delete/(?P<id>[0-9]+)$', views.team_delete, name='team_delete'),
     url(r'^/change_aboutus/', views.change_aboutus, name='change_aboutus'),
     url(r'^/about/$', views.about, name='about')
+    url(r'^/contacts/$', views.contacts, name='contacts')
+    url(r'^/change_contacts/', views.change_contacts, name='change_contacts'),
 ]
