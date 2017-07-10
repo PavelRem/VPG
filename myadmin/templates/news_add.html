@@ -3,10 +3,6 @@
 
 {% block body %}
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css" type="text/css" media="all">
-
 
 <style>
     #photo{
@@ -55,12 +51,13 @@
         <input type="date" class="form-control" name="date" id="date-inp">
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="news-title" value="">
-        
+
         <div class="chek">
             <label class="checkbox-inline"><input type="checkbox" value="">Деятельность</label>
             <label class="checkbox-inline"><input type="checkbox" value="">Мониторинг</label>
             <label class="checkbox-inline"><input type="checkbox" value="">Слайдер</label>
         </div>
+
       <textarea name="text" rows="10" cols="40" id="text"></textarea>
       <button id="add-news" type="submit" class="btn btn-default"> Добавить </button>
     </form>

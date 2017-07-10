@@ -43,7 +43,7 @@ def news_update_save(request, id):
         obj = NewsData.objects.get(pk=id)
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
-        pub_date = request.POST.get('datefrom', '')
+        pub_date = request.POST.get('date', '')
         if '/' in pub_date:
             date_lst = pub_date.split('/')
         elif '-' in pub_date:
@@ -71,7 +71,7 @@ def news_add(request):
         obj = NewsData.objects.create()
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
-        pub_date = request.POST.get('datefrom', '')
+        pub_date = request.POST.get('date', '')
         if '/' in pub_date:
             date_lst = pub_date.split('/')
         elif '-' in pub_date:
