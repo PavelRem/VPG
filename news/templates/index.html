@@ -114,6 +114,8 @@
                 </div>
             </div>
             {% block paginate %}
+            {% else %}
+            {% block body %}
             {% endblock %}
             {% endif %}
         </div>
