@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^monitoring/$', views.monitoring, name='monitoring'),
     url(r'^reference/$', views.reference, name='reference'),
     url(r'^partners/$', views.partners, name='partners'),
+    url(r'^contacts/$', views.contacts, name='contacts'),
     #url(r'^admin/$', views.admin, name='admin'),
     url(r'^$', views.index, name='index'),
     #url(r'^admin/news$', views.admin_news, name='admin_news'),

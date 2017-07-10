@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate
 from django.utils.decorators import method_decorator
 import datetime
 
-from news.models import NewsData, Aboutus, Team, Reference, Partners
+from news.models import NewsData, Aboutus, Team, Reference, Partners, Contacts
 
 def activ(request):
     if request.method == "POST":

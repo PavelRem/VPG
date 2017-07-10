@@ -8,7 +8,7 @@ import django.contrib.postgres
 from django.contrib.postgres.search import SearchVector
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 
-from .models import NewsData, Aboutus, Reference, Team, Partners
+from .models import NewsData, Aboutus, Reference, Team, Partners, Contacts
 
 def index(request):
 #    news_data = NewsData.objects.order_by('-pub_date')
@@ -87,6 +87,9 @@ def fullread(request, id_news):
 
 def login(request):
     return render(request, 'login.html',  {})
+
+def contacts(request):
+    return render(request, 'contacts.html',  {'contacts': Contacts.objects.all()[:1]})
 
 def partners(request):
     return render(request, 'partners.html', {'partners': Partners.objects.all(), 'partnerspage': [1]})
