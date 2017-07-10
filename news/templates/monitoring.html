@@ -32,9 +32,9 @@
 			<div class="pagination">
 				<span class="step-links">
 				{% if monitoring_news.has_previous %}
-					<a href="?page={{ monitoring_news.previous_page_number }}"><button></button></a>
+					<a href="?page={{ monitoring_news.previous_page_number }}"><button><<</button></a>
 				{% else %}
-					<button></button>
+					<button><<</button>
 				{% endif %}
 				<span class="current">
 				 {{ monitoring_news.number }} из {{ monitoring_news.paginator.num_pages }}

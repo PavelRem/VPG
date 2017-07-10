@@ -9,16 +9,14 @@
 		<div class="row">
 			{% for news in activity_news %}
 
-						<div class="col-md-4">
-							 <div class="news">
-								 <img src="{{ news.img_url }}" alt="{{ news.title }}">
-								 <div class="news-text">
-								 <h3 id = "news-text-title">{{ news.title }}</h3>
-								 <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
-								 </div>
-								 <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
-								 <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
-							 </div>
+						<div class="col-md-6 news shadow">
+                             <img src="{{ news.img_url }}" alt="{{ news.title }}">
+                                 <div class="news-text">
+                                 <h3 id = "news-text-title">{{ news.title }}</h3>
+                                 <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
+                             </div>
+                             <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
+                             <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
 						</div>
 
 			 {% endfor %}
