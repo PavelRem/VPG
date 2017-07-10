@@ -10,15 +10,15 @@
 <div class="container">
    <div class="inner-content">
 
-   {% if user %}
-   <form enctype="multipart/form-data" action="{% url 'myadmin:user_update_save' user.pk %}" method="post" novalidate>
+   {% if prtcl_user %}
+   <form enctype="multipart/form-data" action="{% url 'myadmin:user_update_save' prtcl_user.pk %}" method="post" novalidate>
         {% csrf_token %}
         <label for="#name">Имя</label>
-        <input type="text" class="form-control" name="name" id="name-inp" value="{{ user.username }}">
+        <input type="text" class="form-control" name="name" id="name-inp" value="{{ prtcl_user.username }}">
         <label for="#email">Эл. почта</label>
-        <input type="email" class="form-control" name="email" id="email-title" value="{{ user.email }}">
+        <input type="email" class="form-control" name="email" id="email-title" value="{{ prtcl_user.email }}">
         <label for="#password">Пароль</label>
-        <input type="text" class="form-control" name="password" id="password-title" value="{{ user.password }}">
+        <input type="text" class="form-control" name="password" id="password-title" value="{{ prtcl_user.password }}">
         <button type="submit" class="btn btn-default"> Сохранить </button>
     </form>
     {% else %}
