@@ -242,15 +242,4 @@ def change_contacts(request):
     obj.email = request.POST['email']
     obj.address = request.POST['address']
     obj.save()
-    return redirect('/admin/about')
-
-def change_aboutus(request):
-    if Contacts.objects.all().count():
-        obj = Contacts.objects.all()[:1].get()
-    else:
-        obj = Contacts.objects.create()
-    obj.number = request.POST['tel']
-    obj.email = request.POST['email']
-    obj.address = request.POST['address']
-    obj.save()
     return redirect('/admin/contacts')
