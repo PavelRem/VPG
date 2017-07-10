@@ -30,8 +30,11 @@
     #date-inp{
         margin-left: 0px;
         margin-bottom: 20px;
-        margin-top: 20px;
         width: 300px;
+    }
+    .checkbox-inline{
+        height: 20px;
+        width: 20px;
     }
     
 </style>
@@ -46,12 +49,9 @@
         <label for="#date-inp">Дата</label>
         <input type="date" class="form-control" name="date" id="date-inp"><br>
         
-        <label for="#activity">Деятельность</label>
-        <input type="checkbox" name="slider"><br>
-        <label for="#monitor">Мониторинг</label>
-        <input type="checkbox" name="monitor" >
-        <label for="#activity">Слайдер</label>
-        <input type="checkbox" name="slider"><br>
+        <label class="checkbox-inline"><input type="checkbox" value="">Деятельность</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Мониторинг</label>
+        <label class="checkbox-inline"><input type="checkbox" value="">Слайдер</label>
         
         <label for="#text">Текст</label>
       <textarea name="text" rows="10" cols="40" id="text"></textarea>
