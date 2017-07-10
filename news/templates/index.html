@@ -77,7 +77,7 @@
 					<li {% if activity_news %} class="active" {% endif %}><a href="{% url 'mynews:activity' %}">Деятельность</a></li>
 					<li {% if monitoring_news %} class="active" {% endif %}><a href="{% url 'mynews:monitoring' %}">Мониторинг</a></li>
 					<li {% if references %} class="active" {% endif %}><a href="{% url 'mynews:reference' %}">СМИ про нас</a></li>
-					<li><a href="Partners.html">Партнеры</a></li>
+					<li><a href="{% url 'mynews:partners' %}">Партнеры</a></li>
 					<li><a href="Contacts.html">Контакты</a></li>
 				  </ul>
 				</div>
