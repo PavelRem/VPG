@@ -45,15 +45,23 @@ def news_update_save(request, id):
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
         pub_date = request.POST.get('date', '')
+
         if '/' in pub_date:
             date_lst = pub_date.split('/')
         elif '-' in pub_date:
             date_lst = pub_date.split('-')
         else:
             date_lst = pub_date.split('.')
-        year = int(date_lst[0])
-        month = int(date_lst[1])
-        day = int(date_lst[2])
+
+        if len(date_lst[0]) > 2:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+        else:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+
         obj.pub_date = datetime.date(year, month, day)
         if request.FILES.get('photo', ''):
             obj.img = request.FILES.get('photo', '')
@@ -73,15 +81,23 @@ def news_add(request):
         obj.title = request.POST.get('title', '')
         obj.text = request.POST.get('text', '')
         pub_date = request.POST.get('date', '')
+
         if '/' in pub_date:
             date_lst = pub_date.split('/')
         elif '-' in pub_date:
             date_lst = pub_date.split('-')
         else:
             date_lst = pub_date.split('.')
-        year = int(date_lst[0])
-        month = int(date_lst[1])
-        day = int(date_lst[2])
+
+        if len(date_lst[0]) > 2:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+        else:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+
         obj.pub_date = datetime.date(year, month, day)
         obj.activity = True if request.POST.get('activity', '') else False
         obj.monitoring =  True if request.POST.get('monitor', '') else False
@@ -126,6 +142,25 @@ def reference_add_save(request):
         obj.title = request.POST.get('title', '')
         obj.link = request.POST.get('link', '')
         obj.source = request.POST.get('source', '')
+        pub_date = request.POST.get('date', '')
+
+        if '/' in pub_date:
+            date_lst = pub_date.split('/')
+        elif '-' in pub_date:
+            date_lst = pub_date.split('-')
+        else:
+            date_lst = pub_date.split('.')
+
+        if len(date_lst[0]) > 2:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+        else:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+
+        obj.pub_date = datetime.date(year, month, day)
         obj.save()
         return redirect('/admin/reference')
     return render(request, 'reference.html',  {'references': Reference.objects.all()})
@@ -139,6 +174,25 @@ def reference_update_save(request, id):
         obj.title = request.POST.get('title', '')
         obj.link = request.POST.get('link', '')
         obj.source = request.POST.get('source', '')
+        pub_date = request.POST.get('date', '')
+
+        if '/' in pub_date:
+            date_lst = pub_date.split('/')
+        elif '-' in pub_date:
+            date_lst = pub_date.split('-')
+        else:
+            date_lst = pub_date.split('.')
+
+        if len(date_lst[0]) > 2:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+        else:
+            year = int(date_lst[0])
+            month = int(date_lst[1])
+            day = int(date_lst[2])
+
+        obj.pub_date = datetime.date(year, month, day)
         obj.save()
         return redirect('/admin/reference')
     return render(request, 'reference.html',  {'references': Reference.objects.all()})

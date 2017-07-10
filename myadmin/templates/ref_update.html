@@ -26,6 +26,8 @@
         {% csrf_token %}
         <label for="#title">Заголовок</label>
         <input type="text" class="form-control" name="title" id="ref-title" value="{{ ref.title }}">
+        <label for="#date-inp">Дата</label>
+        <input type="date" class="form-control" name="date" id="date-inp" value="{{ ref.pub_date | date:"Y-m-d"}}">
         <label for="#link">Ссылка</label>
         <input type="text" class="form-control" name="link" id="link" value="{{ ref.link }}">
         <label for="#source">Источник</label>
