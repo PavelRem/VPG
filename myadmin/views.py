@@ -249,7 +249,7 @@ def add_user(request):
     user = User.objects.create()
     user.is_superuser = True
     user.set_password(request.POST.get('password', ''))
-    user.set_name(request.POST.get('name', ''))
+    user.set_username(request.POST.get('name', ''))
     user.set_email(request.POST.get('email', ''))
     user.save()
     return redirect('/admin/users')
