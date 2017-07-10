@@ -5,15 +5,16 @@
 
 			<div class="galery">
 				<div class="row">
+				<h2 class="content-title">Мониторинг</h2>
 				{% if monitoring_news %}
-
+				
 			{% for news in monitoring_news %}
-						<div class="col-md-4">
+						<div class="col-md-6 news shadow">
 							 <div class="news">
 								 <img src="{{ news.img_url }}" alt="{{ news.title }}">
 								 <div class="news-text">
-								 <h3 id = "news-text-title">{{ news.title }}</h3>
-								 <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
+                                     <h3 id = "news-text-title">{{ news.title }}</h3>
+                                     <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
 								 </div>
 								 <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
 								 <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
@@ -33,9 +34,9 @@
 			<div class="pagination">
 				<span class="step-links">
 				{% if monitoring_news.has_previous %}
-					<a href="?page={{ monitoring_news.previous_page_number }}"><button><<</button></a>
+					<a href="?page={{ monitoring_news.previous_page_number }}"><button></button></a>
 				{% else %}
-					<button><<</button>
+					<button></button>
 				{% endif %}
 				<span class="current">
 				 {{ monitoring_news.number }} из {{ monitoring_news.paginator.num_pages }}

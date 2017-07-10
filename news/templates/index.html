@@ -113,12 +113,12 @@
                     {% endfor %}
                 </div>
             </div>
-            {% block paginate %}
-            {% endblock %}
             {% else %}
             {% block body %}
             {% endblock %}
             {% endif %}
+            {% block paginate %}
+            {% endblock %}
         </div>
         <div class="col-md-4 sidebar">
             <div class="donate sidebox shadow">
