@@ -15,6 +15,9 @@
     .inner-content{
         overflow: hidden;
     }
+    #email, #tel{
+        margin-bottom: 20px;
+    }
 </style>
 
 <div class="container">
@@ -25,8 +28,6 @@
             <input type="email" class="form-control" name="email" id="email" value="{{ info.email }}">
             <label for="#tel">Телефон</label>
             <input type="text" class="form-control" name="tel" id="tel" value="{{ info.number }}">
-            <label for="#address">Адрес</label>
-            <input type="text" class="form-control" name="address" id="address" value="{{ info.address }}">
             <button type="submit" id="about-btn" class="btn btn-default" onclick="get_editor_content()">{% if info %} Изменить {% else %} Добавить {% endif%}</button>
         </form>
     </div>
