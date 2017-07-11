@@ -394,12 +394,13 @@ body{
     padding-left: 0px;
 }
 .content-title{
+    display: inline-block;
     padding-right: 15px;
     margin-top: 0px;
     padding-bottom: 10px;
     border-bottom: 1px solid red;
     margin-bottom: 30px;
-    padding-right: 15px;
+    width: 97%;
 }
 .news{
     margin-bottom: 30px;
