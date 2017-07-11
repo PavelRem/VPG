@@ -230,7 +230,7 @@ body{
 .sidebar{
 	text-align: center;
 	margin-top: 20px;
-    padding-right: 0px;
+    padding: 0px;
 }
 .sidebox{
 	padding: 0px 20px 20px 20px;
@@ -387,11 +387,14 @@ body{
 /*======================================*/
 
 
-
+.content{
+    margin-top: 20px;
+}
 .content .col-md-6{
     padding-left: 0px;
 }
 .content-title{
+    padding-right: 15px;
     margin-top: 0px;
     padding-bottom: 10px;
     border-bottom: 1px solid red;
