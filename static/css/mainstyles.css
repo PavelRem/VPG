@@ -230,6 +230,7 @@ body{
 .sidebar{
 	text-align: center;
 	margin-top: 20px;
+    padding-right: 0px;
 }
 .sidebox{
 	padding: 0px 20px 20px 20px;
@@ -396,7 +397,6 @@ body{
 }
 .news{
     padding: 0px;
-    margin-right: 20px;
     margin-bottom: 20px;
     background-color: #f7f7f7;
     border: 1px solid #e7e7e7;
