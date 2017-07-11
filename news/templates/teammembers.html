@@ -2,19 +2,24 @@
 {% load staticfiles %}
 
 {% block body %}
+
     {% if team %}
-        <div class="row">
-          <h2 class="content-title">О нас</h2>
-          {% for member in team %}
-           <div class="x">
-            <div class="member shadow">
-                <img src="{{ member.photo_url }}" alt="{{ member.name }}">
-                <a href="{{ member.fb }}"  target="_blank">
-                <h3>{{ member.name }}</h3></a>
-                <p>{% autoescape off %} {{ member.descrip }} {% endautoescape %}</p>
-            </div>
-        </div>
-</div>
-        {% endfor %}
+
+       <h1 id = "title">Наша команда</h1>
+          <div class="text">
+
+           {% for member in team %}
+
+              <div class="member">
+                  <img src="{{ member.photo_url }}" alt="{{ member.name }}">
+                  <a href="{{ member.fb }}" class="fb" target="_blank"><h3><div class="x"></div>{{ member.name }}</h3></a>
+                  <p>{% autoescape off %} {{ member.descrip }} {% endautoescape %}</p>
+              </div>
+
+             {% endfor %}
+
+          </div>
+
     {% endif %}
+
 {% endblock %}
