@@ -530,10 +530,10 @@ body{
 }
 .member .content-title{
     color: #000;
-    margin-bottom: 0px;
 }
 .member .content-title h3{
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 .member a:hover{
     color: red;
