@@ -98,9 +98,9 @@
         <div class="col-md-8 content">
            {% if news %}
            <div class="container">
-            <div class="row">
                <h2 class="content-title">Последние новости</h2>
                {% for each in news %}
+               <div class="row">
                 <div class="col-md-6 news shadow">
                 <img src="{{ each.img_url }}" alt="{{ each.title }}">
                 <div class="news-text">
