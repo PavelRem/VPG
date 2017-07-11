@@ -4,9 +4,8 @@
 {% block body %}
 
     {% if team %}
-
-       <h1 id = "title">Наша команда</h1>
-          <div class="text">
+<div class="row">
+    <h2 class="content-title">Деятельность</h2>
 
            {% for member in team %}
 
@@ -18,8 +17,32 @@
 
              {% endfor %}
 
-          </div>
+    </div>
 
     {% endif %}
 
 {% endblock %}
+
+<!--
+
+{% block body %}
+    {% if activity_news %}
+        <div class="row">
+            <h2 class="content-title">Деятельность</h2>
+            {% for news in activity_news %}
+                <div class="col-md-6">
+                    <div class="news shadow">
+                        <img src="{{ news.img_url }}" alt="{{ news.title }}">
+                        <div class="news-text">
+                            <h3 id = "news-text-title">{{ news.title }}</h3>
+                            <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
+                        </div>
+                        <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
+                        <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+-->
