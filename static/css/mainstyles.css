@@ -387,8 +387,12 @@ body{
 /*======================================*/
 
 
-
-
+.content{
+    padding: 0px;
+}
+.content .col-md-6{
+    padding-left: 0px;
+}
 .content-title{
     margin-top: 0px;
     padding-bottom: 10px;
