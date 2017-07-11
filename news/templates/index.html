@@ -96,21 +96,21 @@
   	</div>
   	<div class="container main">
         <div class="col-md-8 content">
-           {% if news %}
-           <div class="container">
-            <div class="row">
-               <h2 class="content-title">Последние новости</h2>
-               {% for each in news %}
-                <div class="col-md-4 news shadow">
-                <img src="{{ each.img_url }}" alt="{{ each.title }}">
-                <div class="news-text">
-                    <h3 id = "news-text-title">{{ each.title }}</h3>
-                    <p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
-                </div>
-                <i id = "date">{{ each.pub_date | date:"d.m.Y" }}</i>
-                <a id = "Reed-more" href="{% url 'mynews:fullread' each.pk %}">Читать больше</a>
-                </div>
-                {% endfor %}
+            {% if news %}
+            <div class="container">
+                <div class="row">
+                    <h2 class="content-title">Последние новости</h2>
+                    {% for each in news %}
+                    <div class="col-md-6 news shadow">
+                        <img src="{{ each.img_url }}" alt="{{ each.title }}">
+                        <div class="news-text">
+                            <h3 id = "news-text-title">{{ each.title }}</h3>
+                            <p>{% autoescape off %} {{ each.text }} {% endautoescape %}</p>
+                        </div>
+                        <i id = "date">{{ each.pub_date | date:"d.m.Y" }}</i>
+                        <a id = "Reed-more" href="{% url 'mynews:fullread' each.pk %}">Читать больше</a>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
             {% else %}
