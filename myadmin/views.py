@@ -8,6 +8,26 @@ import datetime
 from django.contrib.auth.models import User
 
 from news.models import NewsData, Aboutus, Team, Reference, Partners, Contacts
+from django.contrib.auth import (
+    authenticate,
+    get_user_model,
+    login,
+    logout,
+)
+
+from .forms import UserLoginForm
+
+def login_view(request):
+    form = UserLoginForm(request.POST or None)
+    title = "Login"
+    is form.is_valid():
+        username = form.cleaned_data_get("username")
+        password = form.cleaned_data_get("password")
+    return render(request, "form.html", {"form":form, "title": title })
+
+def login_view(request):
+    return render(request, "form.html", {})
+
 
 def activ(request):
     if request.method == "POST":

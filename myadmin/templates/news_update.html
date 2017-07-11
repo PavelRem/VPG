@@ -37,7 +37,6 @@
 <div class="container">
    <div class="inner-content">
   <form enctype="multipart/form-data" action="{% url 'myadmin:news_update_save' news.pk %}" method="post" novalidate>
-      <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
     {% csrf_token %}
         <img src="{{news.img_url}}">
         <input type="file" id="photo" name="photo" multiple />
