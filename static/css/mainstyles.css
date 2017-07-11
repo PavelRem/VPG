@@ -529,6 +529,7 @@ body{
     color: red;
 }
 .member .content-title{
+    margin-top: 0px;
     color: #000;
 }
 .member a:hover{
