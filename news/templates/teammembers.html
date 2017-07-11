@@ -8,13 +8,13 @@
         <h2 class="content-title">Наша команда</h2>
 
            {% for member in team %}
-
+             <div class="x">
               <div class="col-md-12 member">
                   <img src="{{ member.photo_url }}" alt="{{ member.name }}">
                   <a href="{{ member.fb }}" class="fb" target="_blank"><h3>{{ member.name }}</h3></a>
                   <p>{% autoescape off %} {{ member.descrip }} {% endautoescape %}</p>
               </div>
-
+</div>
              {% endfor %}
 </div>
 
