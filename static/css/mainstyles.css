@@ -464,7 +464,9 @@ body{
 
 
 
-
+.x{
+    padding-right: 15px;
+}
 .inner-content{
 	background-color: #f7f7f7;
     border: 1px solid #e7e7e7;

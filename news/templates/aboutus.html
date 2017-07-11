@@ -5,12 +5,14 @@
 
     {% if aboutus %}
         <div class="row">
+           <div class="x">
             <h2 class="content-title">О нас</h2>
             <div class="inner-content shadow">
                 <div class="text">
                     <p>{% autoescape off %} {{ aboutus.text }} {% endautoescape %}</p>
                 </div>
             </div>
+        </div>
         </div>
     {% endif %}
 
