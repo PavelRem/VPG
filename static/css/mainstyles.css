@@ -512,9 +512,7 @@ body{
 }
 /*------------------------------*/
 .member img{
-    width: 200px;
 	height: 200px;
-	background-color: gainsboro;
     float: left;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -530,12 +528,8 @@ body{
     text-decoration: none;
     color: red;
 }
-.member h3{
-    display: block;
-    margin-top: 0;
-    border-bottom: 1px dashed red;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
+.member a:hover{
+    text-shadow: 0px 0px 3px red;
 }
 /*------------------------------*/
 .inner-donate{
