@@ -40,11 +40,12 @@
          {% csrf_token %}
          <label for="#name">Имя</label>
          <input type="text" class="form-control" name="name" id="name-inp">
-         <label for="#email">Эл. почта</label>
-         <input type="email" class="form-control" name="email" id="email-title" value="">
          <label for="#password">Пароль</label>
          <input type="password" class="form-control" name="password" id="password-title" value="">
+         <label for="#password">Пароль еще раз</label>
+         <input type="password" class="form-control" name="password" id="password-title" value="">
          <button type="submit" id="ok-btn" class="btn btn-default"> Добавить </button>
+         <h3>Почта не нужна. Сделай проверку паролей</h3>
      </form>
     {% endif %}
     </div>
