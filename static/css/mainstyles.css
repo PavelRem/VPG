@@ -433,7 +433,7 @@ body{
     font-weight: 600;
     border-bottom: 1px solid red;
     padding-bottom: 10px;
-    padding-right: 15px;
+    width: 95%;
 }
 #date{
 	float: left;
