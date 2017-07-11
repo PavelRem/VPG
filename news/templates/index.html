@@ -97,6 +97,7 @@
   	<div class="container main">
         <div class="col-md-8 content">
            {% if news %}
+           <div class="container">
             <div class="row">
                <h2 class="content-title">Последние новости</h2>
                {% for each in news %}
@@ -110,6 +111,7 @@
                 <a id = "Reed-more" href="{% url 'mynews:fullread' each.pk %}">Читать больше</a>
                 </div>
                 {% endfor %}
+                </div>
             </div>
             {% else %}
             {% block body %}
