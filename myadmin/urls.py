@@ -1,8 +1,6 @@
 from django.conf.urls import url
 
 from . import views
-from accounts.views import (login_view, logout_view)
-
 
 app_name = 'myadmin'
 
