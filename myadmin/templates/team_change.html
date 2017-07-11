@@ -34,8 +34,8 @@
    <form enctype="multipart/form-data" action="{% url 'myadmin:team_change' member.pk  %}" method="post" novalidate>
   <input type='hidden' name='csrfmiddlewaretoken' value='gXkhTULEDj3mYFmsizPopbbKU6BSMGLEDYvMMG1kxQMC8qDBKOXlDvQlxqE7rbGy' />
     {% csrf_token %}
+       <img id="img" name="photo" src="{{ member.photo_url }}">
         <input type='hidden'  name='id' id="id" value='{{ member.pk }}' />
-        <img id="img" name="photo" src="{{ member.photo_url }}">
         <input type="file" name="photo" id="photo">
         <label for="#title">Имя</label>
         <input type="text" class="form-control" name="name" id="name" value="{{ member.name }}">
