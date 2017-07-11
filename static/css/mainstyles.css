@@ -539,18 +539,6 @@ body{
     margin-bottom: 10px;
     padding-bottom: 8px;
 }
-.member .x{
-    float: left;
-    margin-top: -4px;
-    margin-right: 15px;
-}
-.member .fb{
-    color: black;
-}
-.member .fb:hover{
-    color: red;
-    text-shadow: none;
-}
 /*------------------------------*/
 .inner-donate{
     text-align: center;
