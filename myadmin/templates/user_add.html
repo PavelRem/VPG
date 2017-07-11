@@ -30,9 +30,12 @@
         <input type="text" class="form-control" name="name" id="name-inp" value="{{ prtcl_user.username }}">
         <label for="#email">Эл. почта</label>
         <input type="email" class="form-control" name="email" id="email-title" value="{{ prtcl_user.email }}">
-        <label for="#password">Пароль</label>
-        <input type="text" class="form-control" name="password" id="password-title" value="{{ prtcl_user.password }}">
+        <label for="#password">Старый пароль</label>
+        <input type="password" class="form-control" name="password" id="password-title" value="">
+        <label for="#password">Новый пароль</label>
+        <input type="password" class="form-control" name="password" id="password-title" value="">
         <button type="submit" id="ok-btn" class="btn btn-default"> Изменить </button>
+        <h1>Почта не нужна. Сделай проверку паролей</h1>
     </form>
     {% else %}
     <form enctype="multipart/form-data" action="{% url 'myadmin:user_add_save' %}" method="post" novalidate>
@@ -42,7 +45,7 @@
          <label for="#email">Эл. почта</label>
          <input type="email" class="form-control" name="email" id="email-title" value="">
          <label for="#password">Пароль</label>
-         <input type="text" class="form-control" name="password" id="password-title" value="">
+         <input type="password" class="form-control" name="password" id="password-title" value="">
          <button type="submit" id="ok-btn" class="btn btn-default"> Добавить </button>
      </form>
     {% endif %}
