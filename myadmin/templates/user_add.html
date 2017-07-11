@@ -28,8 +28,6 @@
         {% csrf_token %}
         <label for="#name">Имя</label>
         <input type="text" class="form-control" name="name" id="name-inp" value="{{ prtcl_user.username }}">
-        <label for="#email">Эл. почта</label>
-        <input type="email" class="form-control" name="email" id="email-title" value="{{ prtcl_user.email }}">
         <label for="#password">Старый пароль</label>
         <input type="password" class="form-control" name="password" id="password-title" value="">
         <label for="#password">Новый пароль</label>
