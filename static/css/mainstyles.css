@@ -399,6 +399,7 @@ body{
     padding-bottom: 10px;
     border-bottom: 1px solid red;
     margin-bottom: 30px;
+    padding-right: 15px;
 }
 .news{
     margin-bottom: 30px;
@@ -428,13 +429,11 @@ body{
     padding-top: 0px;
 }
 #news-text-title{
-    display: inline-block;
     margin-top: 0px;
     font-size: 17px;
     font-weight: 600;
     border-bottom: 1px solid red;
     padding-bottom: 10px;
-    width: 90%;
 }
 #date{
 	float: left;
