@@ -33,7 +33,7 @@
         <label for="#password">Новый пароль</label>
         <input type="password" class="form-control" name="password" id="password-title" value="">
         <button type="submit" id="ok-btn" class="btn btn-default"> Изменить </button>
-        <h1>Почта не нужна. Сделай проверку паролей</h1>
+        <h3>Почта не нужна. Сделай проверку паролей</h3>
     </form>
     {% else %}
     <form enctype="multipart/form-data" action="{% url 'myadmin:user_add_save' %}" method="post" novalidate>
