@@ -5,24 +5,25 @@
 
     {% if activity_news %}
 
-		<h2 class="content-title">Активность</h2>
             <div class="row">
-                <div class="galery">
+               <h2 class="content-title">Активность</h2>
 			{% for news in activity_news %}
 
-						<div class="col-md-6 news shadow">
-                             <img src="{{ news.img_url }}" alt="{{ news.title }}">
+						<div class="col-md-6">
+                            <div class="news shadow">
+                                <img src="{{ news.img_url }}" alt="{{ news.title }}">
                                  <div class="news-text">
                                  <h3 id = "news-text-title">{{ news.title }}</h3>
                                  <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
                              </div>
                              <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
                              <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
+                            </div>
+                             
 						</div>
 
 			 {% endfor %}
 
-		 </div>
 		</div>
 
     {% endif %}
