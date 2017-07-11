@@ -4,13 +4,14 @@
 {% block body %}
 
     {% if aboutus %}
-         <h2 class="content-title">О нас</h2>
-       <div class="inner-content shadow">
-		      <div class="text">
-		     		<p>{% autoescape off %} {{ aboutus.text }} {% endautoescape %}</p>
-		   		</div>
-	   	</div>
-
+        <div class="row">
+            <h2 class="content-title">О нас</h2>
+            <div class="inner-content shadow">
+                <div class="text">
+                    <p>{% autoescape off %} {{ aboutus.text }} {% endautoescape %}</p>
+                </div>
+            </div>
+        </div>
     {% endif %}
 
 {% endblock %}
