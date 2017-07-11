@@ -2,7 +2,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 p{
-    font-size: 17px;
+    font-size: 16px;
 }
 /*======================================*/
 
@@ -374,6 +374,7 @@ p{
     display: inline-block;
     width: 250px;
     float: left;
+    font-size: 15px;
 }
 .footer .contacts{
     text-align: right;
