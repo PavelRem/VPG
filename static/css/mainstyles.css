@@ -432,6 +432,7 @@ body{
     font-weight: 600;
     border-bottom: 1px solid red;
     padding-bottom: 10px;
+    width: 97%;
 }
 #date{
 	float: left;
