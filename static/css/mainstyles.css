@@ -532,6 +532,7 @@ p{
 .member #fb-img{
     width: 30px;
     height: 30px;
+    margin: 0px;
 }
 .member a{
     text-decoration: none;
