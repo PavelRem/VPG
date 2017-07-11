@@ -4,9 +4,8 @@
 {% block body %}
 
     {% if aboutus %}
-
+         <h2 class="content-title">О нас</h2>
        <div class="inner-content shadow">
-		      <h2 class="content-title">О нас</h2>
 		      <div class="text">
 		     		<p>{% autoescape off %} {{ aboutus.text }} {% endautoescape %}</p>
 		   		</div>
