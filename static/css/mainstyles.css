@@ -406,6 +406,7 @@ body{
     border: 1px solid #e7e7e7;
     border-radius: 3px;
     border-bottom: 3px solid red;
+    overflow: hidden;
 }
 .news img{
     width: 100%;
