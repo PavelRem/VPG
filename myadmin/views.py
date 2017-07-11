@@ -20,7 +20,7 @@ from .forms import UserLoginForm
 def login_view(request):
     form = UserLoginForm(request.POST or None)
     title = "Login"
-    is form.is_valid():
+    if form.is_valid():
         username = form.cleaned_data_get("username")
         password = form.cleaned_data_get("password")
     return render(request, "form.html", {"form":form, "title": title })
