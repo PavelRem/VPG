@@ -1,33 +1,27 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
 
-{% block body %}
-
-			<h2 class="content-title">Мониторинг</h2>
-            <div class="row">
-                <div class="galery">
-				{% if monitoring_news %}
-				
-			{% for news in monitoring_news %}
-						<div class="col-md-6 news shadow">
-                             <img src="{{ news.img_url }}" alt="{{ news.title }}">
-                             <div class="news-text">
-                                 <h3 id = "news-text-title">{{ news.title }}</h3>
-                                 <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
-                             </div>
-                             <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
-                             <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
-						</div>
-					{% endfor %}
-
-    			{% endif %}
-					</div>
-				</div>
-
+{% block body %}		
+    <div class="row">
+        <h2 class="content-title">Мониторинг</h2>
+        {% if monitoring_news %}
+            {% for news in monitoring_news %}
+                <div class="col-md-6">
+                    <div class="news shadow">
+                        <img src="{{ news.img_url }}" alt="{{ news.title }}">
+                        <div class="news-text">
+                            <h3 id = "news-text-title">{{ news.title }}</h3>
+                            <p>{% autoescape off %} {{ news.text }} {% endautoescape %}</p>
+                        </div>
+                        <i id = "date">{{ news.pub_date | date:"d.m.Y" }}</i>
+                        <a id = "Reed-more" href="{% url 'mynews:fullread' news.pk %}">Читать больше</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}
-
 {% block paginate %}
-
 		<nav class ="p-nav" aria-label="Page navigation">
 			<div class="pagination">
 				<span class="step-links">
@@ -47,5 +41,4 @@
 				</span>
 			</div>
 		</nav>
-
 {% endblock %}
