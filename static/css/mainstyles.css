@@ -521,17 +521,6 @@ body{
 .member{
     margin-bottom: 20px;
 }
-.member a{
-    text-decoration: none;
-    color: red;
-}
-.member h3{
-    display: block;
-    margin-top: 0;
-    border-bottom: 1px dashed red;
-    margin-bottom: 10px;
-    padding-bottom: 8px;
-}
 /*------------------------------*/
 .inner-donate{
     text-align: center;
